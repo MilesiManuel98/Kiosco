@@ -23,5 +23,11 @@ namespace KioscoInformaticoDesktop
             LocalidadesView localidadesView = new LocalidadesView();
             localidadesView.ShowDialog();
         }
+
+        private void MenuItemProductos_Click(object sender, EventArgs e)
+        {
+            ProductosView productosView = new ProductosView();
+            productosView.ShowDialog();
+        }
     }
 }

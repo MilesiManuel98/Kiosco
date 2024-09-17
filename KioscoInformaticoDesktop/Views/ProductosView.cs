@@ -18,6 +18,7 @@ namespace KioscoInformaticoDesktop.Views
     {
         IGenericService<Producto> productoService = new GenericService<Producto>();
         BindingSource ListProductos = new BindingSource();
+        List<Producto> ListaFiltrada = new List<Producto>();
         Producto productoCurrent;
 
         public ProductosView()
@@ -30,6 +31,7 @@ namespace KioscoInformaticoDesktop.Views
         private async Task CargarGrilla()
         {
             ListProductos.DataSource = await productoService.GetAllAsync();
+            ListaFiltrada = (List<Producto>)ListProductos.DataSource;
         }
 
         private void iconButtonAgregar_Click(object sender, EventArgs e)
@@ -93,6 +95,27 @@ namespace KioscoInformaticoDesktop.Views
                     await CargarGrilla();
                 }
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FiltrarProductos();
+        }
+
+        private void FiltrarProductos()
+        {
+            var productosFiltrados = ListaFiltrada.Where(p => p.Nombre.ToUpper().Contains(txtFiltro.Text)).ToList();
+            ListProductos.DataSource = productosFiltrados;
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarProductos();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -34,15 +34,18 @@
             MenuItemLocalidades = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuItemSalirDelSistema = new FontAwesome.Sharp.IconMenuItem();
+            MenuItemProductos = new FontAwesome.Sharp.IconMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { MenuItemPrincipal, MenuItemBases, iconMenuItem2 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 56);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 58);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,18 +56,18 @@
             MenuItemPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuItemPrincipal.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemPrincipal.Name = "MenuItemPrincipal";
-            MenuItemPrincipal.Size = new Size(113, 52);
+            MenuItemPrincipal.Size = new Size(128, 52);
             MenuItemPrincipal.Text = "Principal";
             // 
             // MenuItemBases
             // 
-            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades });
+            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades, MenuItemProductos });
             MenuItemBases.IconChar = FontAwesome.Sharp.IconChar.Database;
             MenuItemBases.IconColor = Color.Black;
             MenuItemBases.IconFont = FontAwesome.Sharp.IconFont.Auto;
             MenuItemBases.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemBases.Name = "MenuItemBases";
-            MenuItemBases.Size = new Size(96, 52);
+            MenuItemBases.Size = new Size(108, 52);
             MenuItemBases.Text = "Bases";
             // 
             // MenuItemLocalidades
@@ -75,7 +78,7 @@
             MenuItemLocalidades.IconSize = 28;
             MenuItemLocalidades.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemLocalidades.Name = "MenuItemLocalidades";
-            MenuItemLocalidades.Size = new Size(192, 34);
+            MenuItemLocalidades.Size = new Size(232, 34);
             MenuItemLocalidades.Text = "Localidades";
             MenuItemLocalidades.Click += MenuItemLocalidades_Click;
             // 
@@ -87,7 +90,7 @@
             iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMenuItem2.ImageScaling = ToolStripItemImageScaling.None;
             iconMenuItem2.Name = "iconMenuItem2";
-            iconMenuItem2.Size = new Size(89, 52);
+            iconMenuItem2.Size = new Size(100, 52);
             iconMenuItem2.Text = "Salir";
             // 
             // MenuItemSalirDelSistema
@@ -98,17 +101,28 @@
             MenuItemSalirDelSistema.IconSize = 32;
             MenuItemSalirDelSistema.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemSalirDelSistema.Name = "MenuItemSalirDelSistema";
-            MenuItemSalirDelSistema.Size = new Size(175, 38);
+            MenuItemSalirDelSistema.Size = new Size(214, 38);
             MenuItemSalirDelSistema.Text = "Salir del Sistema";
             MenuItemSalirDelSistema.Click += MenuItemSalirDelSistema_Click;
             // 
+            // MenuItemProductos
+            // 
+            MenuItemProductos.IconChar = FontAwesome.Sharp.IconChar.None;
+            MenuItemProductos.IconColor = Color.Black;
+            MenuItemProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuItemProductos.Name = "MenuItemProductos";
+            MenuItemProductos.Size = new Size(232, 34);
+            MenuItemProductos.Text = "Productos";
+            MenuItemProductos.Click += MenuItemProductos_Click;
+            // 
             // MenuPrincipalView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             MinimizeBox = false;
             Name = "MenuPrincipalView";
             StartPosition = FormStartPosition.CenterParent;
@@ -128,5 +142,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemBases;
         private FontAwesome.Sharp.IconMenuItem MenuItemSalirDelSistema;
         private FontAwesome.Sharp.IconMenuItem MenuItemLocalidades;
+        private FontAwesome.Sharp.IconMenuItem MenuItemProductos;
     }
 }

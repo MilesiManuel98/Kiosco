@@ -19,6 +19,7 @@ namespace KioscoInformaticoDesktop.Views
     {
         IGenericService<Localidad> localidadService = new GenericService<Localidad>();
         BindingSource ListLocalidades = new BindingSource();
+        List<Localidad> ListaFiltrada = new List<Localidad>();
         Localidad localidadCurrent;
         public LocalidadesView()
         {
@@ -30,7 +31,7 @@ namespace KioscoInformaticoDesktop.Views
         private async Task CargarGrilla()
         {
             ListLocalidades.DataSource = await localidadService.GetAllAsync();
-
+            ListaFiltrada = (List<Localidad>)ListLocalidades.DataSource;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -77,6 +78,41 @@ namespace KioscoInformaticoDesktop.Views
             txtNombre.Text = localidadCurrent.Nombre;
             tabControl.SelectTab(tabPageAgregarEditar);
 
+        }
+
+
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            FiltrarLocalidades();
+        }
+
+        private void FiltrarLocalidades()
+        {
+            var localidadesFiltradas = ListaFiltrada.Where(p => p.Nombre.ToUpper().Contains(txtFiltro.Text)).ToList();
+            ListLocalidades.DataSource = localidadesFiltradas;
+        }
+
+        private void txtFiltro_TextChanged_1(object sender, EventArgs e)
+        {
+            FiltrarLocalidades();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private async void iconButtonEliminar_ClickAsync(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show($"¿Está seguro que desea eliminar la localidad {localidadCurrent.Nombre} ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                localidadCurrent = (Localidad)ListLocalidades.Current;
+                await localidadService.DeleteAsync(localidadCurrent.Id);
+                await CargarGrilla();
+            }
+            localidadCurrent = null;
         }
     }
 }
