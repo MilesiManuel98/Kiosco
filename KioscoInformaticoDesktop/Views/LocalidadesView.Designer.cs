@@ -32,6 +32,7 @@
             label1 = new Label();
             tabControl = new TabControl();
             tabPageLista = new TabPage();
+            iconButtonEliminar = new FontAwesome.Sharp.IconButton();
             btnSalir = new FontAwesome.Sharp.IconButton();
             btnBuscar = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
@@ -44,7 +45,6 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
-            iconButtonEliminar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
@@ -104,6 +104,26 @@
             tabPageLista.TabIndex = 0;
             tabPageLista.Text = "Lista";
             tabPageLista.UseVisualStyleBackColor = true;
+            // 
+            // iconButtonEliminar
+            // 
+            iconButtonEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconButtonEliminar.BackColor = Color.White;
+            iconButtonEliminar.ForeColor = Color.Black;
+            iconButtonEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            iconButtonEliminar.IconColor = Color.Black;
+            iconButtonEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonEliminar.IconSize = 44;
+            iconButtonEliminar.ImageAlign = ContentAlignment.TopCenter;
+            iconButtonEliminar.Location = new Point(886, 363);
+            iconButtonEliminar.Margin = new Padding(3, 4, 3, 4);
+            iconButtonEliminar.Name = "iconButtonEliminar";
+            iconButtonEliminar.Size = new Size(86, 75);
+            iconButtonEliminar.TabIndex = 14;
+            iconButtonEliminar.Text = "Eli&minar";
+            iconButtonEliminar.TextAlign = ContentAlignment.BottomCenter;
+            iconButtonEliminar.UseVisualStyleBackColor = false;
+            iconButtonEliminar.Click += iconButtonEliminar_ClickAsync;
             // 
             // btnSalir
             // 
@@ -171,7 +191,7 @@
             btnEditar.Location = new Point(886, 249);
             btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(94, 82);
+            btnEditar.Size = new Size(86, 82);
             btnEditar.TabIndex = 2;
             btnEditar.Text = "&Editar";
             btnEditar.TextAlign = ContentAlignment.BottomCenter;
@@ -189,7 +209,7 @@
             btnAgregar.Location = new Point(886, 130);
             btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 82);
+            btnAgregar.Size = new Size(86, 82);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "&Agregar";
             btnAgregar.TextAlign = ContentAlignment.BottomCenter;
@@ -273,26 +293,6 @@
             label2.Size = new Size(67, 20);
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
-            // 
-            // iconButtonEliminar
-            // 
-            iconButtonEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButtonEliminar.BackColor = Color.White;
-            iconButtonEliminar.ForeColor = Color.Black;
-            iconButtonEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            iconButtonEliminar.IconColor = Color.Black;
-            iconButtonEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEliminar.IconSize = 44;
-            iconButtonEliminar.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonEliminar.Location = new Point(886, 363);
-            iconButtonEliminar.Margin = new Padding(3, 4, 3, 4);
-            iconButtonEliminar.Name = "iconButtonEliminar";
-            iconButtonEliminar.Size = new Size(86, 75);
-            iconButtonEliminar.TabIndex = 14;
-            iconButtonEliminar.Text = "Eli&minar";
-            iconButtonEliminar.TextAlign = ContentAlignment.BottomCenter;
-            iconButtonEliminar.UseVisualStyleBackColor = false;
-            iconButtonEliminar.Click += iconButtonEliminar_ClickAsync;
             // 
             // LocalidadesView
             // 
