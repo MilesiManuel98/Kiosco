@@ -1,6 +1,6 @@
 ﻿namespace KioscoInformaticoDesktop.Views
 {
-    partial class ProductosView
+    partial class ClientesView
     {
         /// <summary>
         /// Required designer variable.
@@ -39,20 +39,21 @@
             iconButtonEliminar = new FontAwesome.Sharp.IconButton();
             iconButtonEditar = new FontAwesome.Sharp.IconButton();
             iconButtonAgregar = new FontAwesome.Sharp.IconButton();
-            dataGridProductosView = new DataGridView();
+            dataGridClientesView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
-            numericPrecio = new NumericUpDown();
             txtPrecio = new Label();
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
+            txtDireccion = new TextBox();
+            label4 = new Label();
+            txtTelefono = new TextBox();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridProductosView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClientesView).BeginInit();
             tabPageAgregarEditar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericPrecio).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -72,9 +73,9 @@
             label1.Font = new Font("ROG Fonts", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(11, 12);
             label1.Name = "label1";
-            label1.Size = new Size(286, 41);
+            label1.Size = new Size(231, 41);
             label1.TabIndex = 0;
-            label1.Text = "Productos";
+            label1.Text = "Clientes";
             // 
             // tabControl
             // 
@@ -97,7 +98,7 @@
             tabPageLista.Controls.Add(iconButtonEliminar);
             tabPageLista.Controls.Add(iconButtonEditar);
             tabPageLista.Controls.Add(iconButtonAgregar);
-            tabPageLista.Controls.Add(dataGridProductosView);
+            tabPageLista.Controls.Add(dataGridClientesView);
             tabPageLista.Location = new Point(4, 29);
             tabPageLista.Margin = new Padding(3, 4, 3, 4);
             tabPageLista.Name = "tabPageLista";
@@ -187,7 +188,7 @@
             iconButtonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iconButtonEditar.BackColor = Color.White;
             iconButtonEditar.ForeColor = Color.Black;
-            iconButtonEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            iconButtonEditar.IconChar = FontAwesome.Sharp.IconChar.Pencil;
             iconButtonEditar.IconColor = Color.Black;
             iconButtonEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonEditar.IconSize = 45;
@@ -200,7 +201,6 @@
             iconButtonEditar.Text = "&Editar";
             iconButtonEditar.TextAlign = ContentAlignment.BottomCenter;
             iconButtonEditar.UseVisualStyleBackColor = false;
-            iconButtonEditar.Click += iconButtonEditar_Click;
             // 
             // iconButtonAgregar
             // 
@@ -221,24 +221,26 @@
             iconButtonAgregar.UseVisualStyleBackColor = false;
             iconButtonAgregar.Click += iconButtonAgregar_Click;
             // 
-            // dataGridProductosView
+            // dataGridClientesView
             // 
-            dataGridProductosView.AllowUserToAddRows = false;
-            dataGridProductosView.AllowUserToDeleteRows = false;
-            dataGridProductosView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridProductosView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridProductosView.Location = new Point(3, 101);
-            dataGridProductosView.Margin = new Padding(3, 4, 3, 4);
-            dataGridProductosView.Name = "dataGridProductosView";
-            dataGridProductosView.ReadOnly = true;
-            dataGridProductosView.RowHeadersWidth = 51;
-            dataGridProductosView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridProductosView.Size = new Size(841, 451);
-            dataGridProductosView.TabIndex = 0;
+            dataGridClientesView.AllowUserToAddRows = false;
+            dataGridClientesView.AllowUserToDeleteRows = false;
+            dataGridClientesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridClientesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridClientesView.Location = new Point(3, 101);
+            dataGridClientesView.Margin = new Padding(3, 4, 3, 4);
+            dataGridClientesView.Name = "dataGridClientesView";
+            dataGridClientesView.ReadOnly = true;
+            dataGridClientesView.RowHeadersWidth = 51;
+            dataGridClientesView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridClientesView.Size = new Size(841, 451);
+            dataGridClientesView.TabIndex = 0;
             // 
             // tabPageAgregarEditar
             // 
-            tabPageAgregarEditar.Controls.Add(numericPrecio);
+            tabPageAgregarEditar.Controls.Add(txtTelefono);
+            tabPageAgregarEditar.Controls.Add(label4);
+            tabPageAgregarEditar.Controls.Add(txtDireccion);
             tabPageAgregarEditar.Controls.Add(txtPrecio);
             tabPageAgregarEditar.Controls.Add(btnCancelar);
             tabPageAgregarEditar.Controls.Add(btnGuardar);
@@ -253,24 +255,14 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
-            // numericPrecio
-            // 
-            numericPrecio.Location = new Point(445, 207);
-            numericPrecio.Margin = new Padding(3, 4, 3, 4);
-            numericPrecio.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericPrecio.Name = "numericPrecio";
-            numericPrecio.Size = new Size(225, 27);
-            numericPrecio.TabIndex = 13;
-            numericPrecio.TextAlign = HorizontalAlignment.Right;
-            // 
             // txtPrecio
             // 
             txtPrecio.AutoSize = true;
-            txtPrecio.Location = new Point(342, 209);
+            txtPrecio.Location = new Point(339, 166);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(53, 20);
+            txtPrecio.Size = new Size(75, 20);
             txtPrecio.TabIndex = 12;
-            txtPrecio.Text = "Precio:";
+            txtPrecio.Text = "Direccion:";
             // 
             // btnCancelar
             // 
@@ -302,7 +294,6 @@
             btnGuardar.Text = "&Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombre
             // 
@@ -321,7 +312,32 @@
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
             // 
-            // ProductosView
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(445, 163);
+            txtDireccion.Margin = new Padding(3, 4, 3, 4);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(225, 27);
+            txtDireccion.TabIndex = 13;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(339, 251);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 14;
+            label4.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(445, 248);
+            txtTelefono.Margin = new Padding(3, 4, 3, 4);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(225, 27);
+            txtTelefono.TabIndex = 15;
+            // 
+            // ClientesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -329,17 +345,16 @@
             Controls.Add(tabControl);
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "ProductosView";
-            Text = "ProductosView";
+            Name = "ClientesView";
+            Text = "ClientesView";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tabControl.ResumeLayout(false);
             tabPageLista.ResumeLayout(false);
             tabPageLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridProductosView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClientesView).EndInit();
             tabPageAgregarEditar.ResumeLayout(false);
             tabPageAgregarEditar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericPrecio).EndInit();
             ResumeLayout(false);
         }
 
@@ -352,7 +367,7 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnAgregar;
-        private DataGridView dataGridProductosView;
+        private DataGridView dataGridClientesView;
         private TabPage tabPageAgregarEditar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
@@ -361,11 +376,13 @@
         private FontAwesome.Sharp.IconButton iconButtonEliminar;
         private FontAwesome.Sharp.IconButton iconButtonEditar;
         private FontAwesome.Sharp.IconButton iconButtonAgregar;
-        private NumericUpDown numericPrecio;
         private Label txtPrecio;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private Label label3;
         private TextBox txtFiltro;
+        private TextBox txtTelefono;
+        private Label label4;
+        private TextBox txtDireccion;
     }
 }
