@@ -32,9 +32,10 @@
             MenuItemPrincipal = new FontAwesome.Sharp.IconMenuItem();
             MenuItemBases = new FontAwesome.Sharp.IconMenuItem();
             MenuItemLocalidades = new FontAwesome.Sharp.IconMenuItem();
+            MenuItemProductos = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuItemSalirDelSistema = new FontAwesome.Sharp.IconMenuItem();
-            MenuItemProductos = new FontAwesome.Sharp.IconMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // 
             // MenuItemBases
             // 
-            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades, MenuItemProductos });
+            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades, MenuItemProductos, clientesToolStripMenuItem });
             MenuItemBases.IconChar = FontAwesome.Sharp.IconChar.Database;
             MenuItemBases.IconColor = Color.Black;
             MenuItemBases.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -81,6 +82,16 @@
             MenuItemLocalidades.Size = new Size(232, 34);
             MenuItemLocalidades.Text = "Localidades";
             MenuItemLocalidades.Click += MenuItemLocalidades_Click;
+            // 
+            // MenuItemProductos
+            // 
+            MenuItemProductos.IconChar = FontAwesome.Sharp.IconChar.None;
+            MenuItemProductos.IconColor = Color.Black;
+            MenuItemProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuItemProductos.Name = "MenuItemProductos";
+            MenuItemProductos.Size = new Size(232, 34);
+            MenuItemProductos.Text = "Productos";
+            MenuItemProductos.Click += MenuItemProductos_Click;
             // 
             // iconMenuItem2
             // 
@@ -105,15 +116,12 @@
             MenuItemSalirDelSistema.Text = "Salir del Sistema";
             MenuItemSalirDelSistema.Click += MenuItemSalirDelSistema_Click;
             // 
-            // MenuItemProductos
+            // clientesToolStripMenuItem
             // 
-            MenuItemProductos.IconChar = FontAwesome.Sharp.IconChar.None;
-            MenuItemProductos.IconColor = Color.Black;
-            MenuItemProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            MenuItemProductos.Name = "MenuItemProductos";
-            MenuItemProductos.Size = new Size(232, 34);
-            MenuItemProductos.Text = "Productos";
-            MenuItemProductos.Click += MenuItemProductos_Click;
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(232, 34);
+            clientesToolStripMenuItem.Text = "Clientes";
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // MenuPrincipalView
             // 
@@ -143,5 +151,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemSalirDelSistema;
         private FontAwesome.Sharp.IconMenuItem MenuItemLocalidades;
         private FontAwesome.Sharp.IconMenuItem MenuItemProductos;
+        private ToolStripMenuItem clientesToolStripMenuItem;
     }
 }
