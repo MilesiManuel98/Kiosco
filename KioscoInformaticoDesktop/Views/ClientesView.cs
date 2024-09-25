@@ -1,4 +1,5 @@
-﻿using KioscoInformaticoServices.Interfaces;
+﻿using KioscoInformaticoDesktop.DataContext;
+using KioscoInformaticoServices.Interfaces;
 using KioscoInformaticoServices.Models;
 using KioscoInformaticoServices.Services;
 using System;
@@ -16,9 +17,8 @@ namespace KioscoInformaticoDesktop.Views
 {
     public partial class ClientesView : Form
     {
-        IGenericService<Cliente> clienteService = new GenericService<Cliente>();
+        IClienteService clienteService = new ClienteService();
         BindingSource ListClientes = new BindingSource();
-        List<Cliente> ListaFiltrada = new List<Cliente>();
         Cliente clienteCurrent;
 
         public ClientesView()
@@ -31,7 +31,6 @@ namespace KioscoInformaticoDesktop.Views
         private async Task CargarGrilla()
         {
             ListClientes.DataSource = await clienteService.GetAllAsync();
-            ListaFiltrada = (List<Cliente>)ListClientes.DataSource;
         }
 
         private void iconButtonAgregar_Click(object sender, EventArgs e)
@@ -106,10 +105,9 @@ namespace KioscoInformaticoDesktop.Views
             FiltrarProductos();
         }
 
-        private void FiltrarProductos()
+        private async void FiltrarProductos()
         {
-            var productosFiltrados = ListaFiltrada.Where(p => p.Nombre.ToUpper().Contains(txtFiltro.Text)).ToList();
-            ListClientes.DataSource = productosFiltrados;
+            ListClientes.DataSource = await clienteService.GetAllAsync(txtFiltro.Text);
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
