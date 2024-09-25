@@ -10,6 +10,7 @@ public partial class Producto
     [Required]
     public string Nombre { get; set; } = null!;
     [Required]
+    [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
     public decimal Precio { get; set; }
 
     public virtual ICollection<DetalleCompra> DetalleCompra { get; set; } = new List<DetalleCompra>();

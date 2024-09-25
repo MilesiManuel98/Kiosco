@@ -23,8 +23,12 @@ namespace KioscoInformaticoBackend.Controllers
 
         // GET: api/Productos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos()
+        public async Task<ActionResult<IEnumerable<Producto>>> GetProductos([FromQuery] string? filtro)
         {
+            if (filtro != null)
+            {
+                return await _context.Productos.Where(l => l.Nombre.ToUpper().Contains(filtro.ToUpper())).ToListAsync();
+            }
             return await _context.Productos.ToListAsync();
         }
 

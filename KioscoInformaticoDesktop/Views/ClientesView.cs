@@ -39,7 +39,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageAgregarEditar);
         }
 
-        private void iconButtonEditar_Click(object sender, EventArgs e)
+        private void iconButtonEditar_Click_1(object sender, EventArgs e)
         {
             clienteCurrent = (Cliente)ListClientes.Current;
             txtNombre.Text = clienteCurrent.Nombre;
@@ -48,7 +48,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageAgregarEditar);
         }
 
-        private async void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
@@ -63,7 +63,18 @@ namespace KioscoInformaticoDesktop.Views
                 await clienteService.UpdateAsync(clienteCurrent);
                 clienteCurrent = null;
             }
-            
+            else
+            {
+
+                var cliente = new Cliente
+                {
+                    Nombre = txtNombre.Text,
+                    Direccion = txtDireccion.Text,
+                    Telefonos = txtTelefono.Text
+                };
+                await clienteService.AddAsync(clienteCurrent);
+            }
+
             await CargarGrilla();
             txtNombre.Text = string.Empty;
             txtDireccion.Text = string.Empty;

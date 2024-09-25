@@ -41,14 +41,14 @@
             iconButtonAgregar = new FontAwesome.Sharp.IconButton();
             dataGridClientesView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
+            txtTelefono = new TextBox();
+            label4 = new Label();
+            txtDireccion = new TextBox();
             txtPrecio = new Label();
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
-            txtDireccion = new TextBox();
-            label4 = new Label();
-            txtTelefono = new TextBox();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
@@ -188,7 +188,7 @@
             iconButtonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iconButtonEditar.BackColor = Color.White;
             iconButtonEditar.ForeColor = Color.Black;
-            iconButtonEditar.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            iconButtonEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             iconButtonEditar.IconColor = Color.Black;
             iconButtonEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonEditar.IconSize = 45;
@@ -201,6 +201,7 @@
             iconButtonEditar.Text = "&Editar";
             iconButtonEditar.TextAlign = ContentAlignment.BottomCenter;
             iconButtonEditar.UseVisualStyleBackColor = false;
+            iconButtonEditar.Click += iconButtonEditar_Click_1;
             // 
             // iconButtonAgregar
             // 
@@ -255,6 +256,31 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(445, 248);
+            txtTelefono.Margin = new Padding(3, 4, 3, 4);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(225, 27);
+            txtTelefono.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(339, 251);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 14;
+            label4.Text = "Telefono:";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(445, 163);
+            txtDireccion.Margin = new Padding(3, 4, 3, 4);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(225, 27);
+            txtDireccion.TabIndex = 13;
+            // 
             // txtPrecio
             // 
             txtPrecio.AutoSize = true;
@@ -294,6 +320,7 @@
             btnGuardar.Text = "&Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // txtNombre
             // 
@@ -311,31 +338,6 @@
             label2.Size = new Size(67, 20);
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
-            // 
-            // txtDireccion
-            // 
-            txtDireccion.Location = new Point(445, 163);
-            txtDireccion.Margin = new Padding(3, 4, 3, 4);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(225, 27);
-            txtDireccion.TabIndex = 13;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(339, 251);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 20);
-            label4.TabIndex = 14;
-            label4.Text = "Telefono:";
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(445, 248);
-            txtTelefono.Margin = new Padding(3, 4, 3, 4);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(225, 27);
-            txtTelefono.TabIndex = 15;
             // 
             // ClientesView
             // 
