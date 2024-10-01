@@ -35,7 +35,7 @@
             MenuItemProductos = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuItemSalirDelSistema = new FontAwesome.Sharp.IconMenuItem();
-            clientesToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,11 +85,13 @@
             // 
             // MenuItemProductos
             // 
-            MenuItemProductos.IconChar = FontAwesome.Sharp.IconChar.None;
+            MenuItemProductos.IconChar = FontAwesome.Sharp.IconChar.Box;
             MenuItemProductos.IconColor = Color.Black;
             MenuItemProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuItemProductos.IconSize = 28;
+            MenuItemProductos.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemProductos.Name = "MenuItemProductos";
-            MenuItemProductos.Size = new Size(232, 34);
+            MenuItemProductos.Size = new Size(179, 34);
             MenuItemProductos.Text = "Productos";
             MenuItemProductos.Click += MenuItemProductos_Click;
             // 
@@ -118,8 +120,13 @@
             // 
             // clientesToolStripMenuItem
             // 
+            clientesToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.Users;
+            clientesToolStripMenuItem.IconColor = Color.Black;
+            clientesToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clientesToolStripMenuItem.IconSize = 28;
+            clientesToolStripMenuItem.ImageScaling = ToolStripItemImageScaling.None;
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(232, 34);
+            clientesToolStripMenuItem.Size = new Size(179, 34);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
@@ -151,6 +158,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemSalirDelSistema;
         private FontAwesome.Sharp.IconMenuItem MenuItemLocalidades;
         private FontAwesome.Sharp.IconMenuItem MenuItemProductos;
-        private ToolStripMenuItem clientesToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem clientesToolStripMenuItem;
     }
 }

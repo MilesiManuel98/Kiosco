@@ -41,6 +41,7 @@
             iconButtonAgregar = new FontAwesome.Sharp.IconButton();
             dataGridClientesView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
+            comboLocalidades = new ComboBox();
             txtTelefono = new TextBox();
             label4 = new Label();
             txtDireccion = new TextBox();
@@ -239,6 +240,7 @@
             // 
             // tabPageAgregarEditar
             // 
+            tabPageAgregarEditar.Controls.Add(comboLocalidades);
             tabPageAgregarEditar.Controls.Add(txtTelefono);
             tabPageAgregarEditar.Controls.Add(label4);
             tabPageAgregarEditar.Controls.Add(txtDireccion);
@@ -256,9 +258,17 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
+            // comboLocalidades
+            // 
+            comboLocalidades.FormattingEnabled = true;
+            comboLocalidades.Location = new Point(445, 283);
+            comboLocalidades.Name = "comboLocalidades";
+            comboLocalidades.Size = new Size(225, 28);
+            comboLocalidades.TabIndex = 16;
+            // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(445, 248);
+            txtTelefono.Location = new Point(445, 201);
             txtTelefono.Margin = new Padding(3, 4, 3, 4);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(225, 27);
@@ -267,7 +277,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(339, 251);
+            label4.Location = new Point(339, 204);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 14;
@@ -275,7 +285,7 @@
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(445, 163);
+            txtDireccion.Location = new Point(445, 127);
             txtDireccion.Margin = new Padding(3, 4, 3, 4);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(225, 27);
@@ -284,7 +294,7 @@
             // txtPrecio
             // 
             txtPrecio.AutoSize = true;
-            txtPrecio.Location = new Point(339, 166);
+            txtPrecio.Location = new Point(334, 130);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(75, 20);
             txtPrecio.TabIndex = 12;
@@ -386,5 +396,6 @@
         private TextBox txtTelefono;
         private Label label4;
         private TextBox txtDireccion;
+        private ComboBox comboLocalidades;
     }
 }

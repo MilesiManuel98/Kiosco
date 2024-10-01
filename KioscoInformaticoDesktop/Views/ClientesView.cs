@@ -26,27 +26,34 @@ namespace KioscoInformaticoDesktop.Views
             InitializeComponent();
             dataGridClientesView.DataSource = ListClientes;
             CargarGrilla();
+            CarnarCombo();
+        }
+
+        private async Task CarnarCombo()
+        {
+            comboLocalidades.DataSource = await localidadService.GetAllAsync();
+            comboLocalidades.DisplayMember = "Nombre";
+            comboLocalidades.ValueMember = "Id";
+            comboLocalidades.SelectedIndex = 0;
         }
 
         private async Task CargarGrilla()
         {
             ListClientes.DataSource = await clienteService.GetAllAsync();
         }
-
         private void iconButtonAgregar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabPageAgregarEditar);
         }
-
         private void iconButtonEditar_Click_1(object sender, EventArgs e)
         {
             clienteCurrent = (Cliente)ListClientes.Current;
             txtNombre.Text = clienteCurrent.Nombre;
             txtDireccion.Text = clienteCurrent.Direccion;
             txtTelefono.Text = clienteCurrent.Telefonos;
+            comboLocalidades.SelectedIndex = 0;
             tabControl.SelectTab(tabPageAgregarEditar);
         }
-
         private async void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))
@@ -59,6 +66,7 @@ namespace KioscoInformaticoDesktop.Views
                 clienteCurrent.Nombre = txtNombre.Text;
                 clienteCurrent.Direccion = txtDireccion.Text;
                 clienteCurrent.Telefonos = txtTelefono.Text;
+                clienteCurrent.LocalidadId = (int)comboLocalidades.SelectedValue;
                 await clienteService.UpdateAsync(clienteCurrent);
                 clienteCurrent = null;
             }
@@ -69,7 +77,8 @@ namespace KioscoInformaticoDesktop.Views
                 {
                     Nombre = txtNombre.Text,
                     Direccion = txtDireccion.Text,
-                    Telefonos = txtTelefono.Text
+                    Telefonos = txtTelefono.Text,
+                    LocalidadId = (int)comboLocalidades.SelectedValue
                 };
                 await clienteService.AddAsync(clienteCurrent);
             }
@@ -80,41 +89,39 @@ namespace KioscoInformaticoDesktop.Views
             txtTelefono.Text = string.Empty;
             tabControl.SelectTab(tabPageLista);
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            clienteCurrent = null;
+            txtNombre.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            comboLocalidades.SelectedIndex = 0;
+            tabControl.SelectTab(tabPageLista);
 
+        }
         private async void iconButtonEliminar_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("¿Está seguro que desea eliminar el producto?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show($"¿Está seguro que desea eliminar al cliente {clienteCurrent.Nombre} ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                clienteCurrent = ListClientes.Current as Cliente;
-                if (clienteCurrent != null)
-                {
-                    await clienteService.DeleteAsync(clienteCurrent.Id);
-                    await CargarGrilla();
-                }
+                clienteCurrent = (Cliente)ListClientes.Current;
+                await clienteService.DeleteAsync(clienteCurrent.Id);
+                await CargarGrilla();
             }
+            clienteCurrent = null;
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            FiltrarProductos();
+            FiltrarClientes();
         }
-
-        private async void FiltrarProductos()
+        private async void FiltrarClientes()
         {
             ListClientes.DataSource = await clienteService.GetAllAsync(txtFiltro.Text);
         }
-
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            FiltrarProductos();
+            FiltrarClientes();
         }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
