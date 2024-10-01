@@ -50,6 +50,7 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
@@ -240,6 +241,7 @@
             // 
             // tabPageAgregarEditar
             // 
+            tabPageAgregarEditar.Controls.Add(label5);
             tabPageAgregarEditar.Controls.Add(comboLocalidades);
             tabPageAgregarEditar.Controls.Add(txtTelefono);
             tabPageAgregarEditar.Controls.Add(label4);
@@ -349,6 +351,15 @@
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(332, 286);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 20);
+            label5.TabIndex = 17;
+            label5.Text = "Localidad:";
+            // 
             // ClientesView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -397,5 +408,6 @@
         private Label label4;
         private TextBox txtDireccion;
         private ComboBox comboLocalidades;
+        private Label label5;
     }
 }

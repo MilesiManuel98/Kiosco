@@ -18,6 +18,7 @@ namespace KioscoInformaticoDesktop.Views
     public partial class ClientesView : Form
     {
         IClienteService clienteService = new ClienteService();
+        ILocalidadService localidadService = new LocalidadService();
         BindingSource ListClientes = new BindingSource();
         Cliente clienteCurrent;
 
@@ -80,7 +81,7 @@ namespace KioscoInformaticoDesktop.Views
                     Telefonos = txtTelefono.Text,
                     LocalidadId = (int)comboLocalidades.SelectedValue
                 };
-                await clienteService.AddAsync(clienteCurrent);
+                await clienteService.AddAsync(cliente);
             }
 
             await CargarGrilla();
@@ -101,7 +102,14 @@ namespace KioscoInformaticoDesktop.Views
         }
         private async void iconButtonEliminar_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show($"¿Está seguro que desea eliminar al cliente {clienteCurrent.Nombre} ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            clienteCurrent = (Cliente)ListClientes.Current;
+
+            if (clienteCurrent == null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            var result = MessageBox.Show($"¿Está seguro que desea eliminar al cliente {clienteCurrent.Nombre}?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 clienteCurrent = (Cliente)ListClientes.Current;

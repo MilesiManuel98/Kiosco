@@ -85,6 +85,13 @@ namespace KioscoInformaticoDesktop.Views
 
         private async void iconButtonEliminar_Click(object sender, EventArgs e)
         {
+            productoCurrent = (Producto)ListProductos.Current;
+
+            if (productoCurrent == null)
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             var result = MessageBox.Show("¿Está seguro que desea eliminar el producto?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {

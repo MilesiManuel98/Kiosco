@@ -54,7 +54,7 @@ namespace KioscoInformaticoDesktop.Views
                 {
                     Nombre = txtNombre.Text
                 };
-                await localidadService.AddAsync(localidadCurrent);
+                await localidadService.AddAsync(localidad);
             }
 
             await CargarGrilla();
@@ -74,6 +74,14 @@ namespace KioscoInformaticoDesktop.Views
         }
         private async void iconButtonEliminar_ClickAsync(object sender, EventArgs e)
         {
+
+            localidadCurrent = (Localidad)ListLocalidades.Current;
+
+            if (localidadCurrent == null)
+            {
+                MessageBox.Show("Debe seleccionar una localidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             var result = MessageBox.Show($"¿Está seguro que desea eliminar la localidad {localidadCurrent.Nombre} ?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
