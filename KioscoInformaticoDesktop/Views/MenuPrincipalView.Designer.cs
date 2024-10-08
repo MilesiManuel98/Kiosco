@@ -37,13 +37,15 @@
             MenuItemProveedores = new FontAwesome.Sharp.IconMenuItem();
             iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuItemSalirDelSistema = new FontAwesome.Sharp.IconMenuItem();
+            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            MenuItemListadoLocalidades = new FontAwesome.Sharp.IconMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { MenuItemPrincipal, MenuItemBases, iconMenuItem2 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { MenuItemPrincipal, MenuItemBases, iconMenuItem2, iconMenuItem1 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -143,6 +145,26 @@
             MenuItemSalirDelSistema.Text = "Salir del Sistema";
             MenuItemSalirDelSistema.Click += MenuItemSalirDelSistema_Click;
             // 
+            // iconMenuItem1
+            // 
+            iconMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { MenuItemListadoLocalidades });
+            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem1.IconColor = Color.Black;
+            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem1.Name = "iconMenuItem1";
+            iconMenuItem1.Size = new Size(97, 52);
+            iconMenuItem1.Text = "Listados";
+            // 
+            // MenuItemListadoLocalidades
+            // 
+            MenuItemListadoLocalidades.IconChar = FontAwesome.Sharp.IconChar.None;
+            MenuItemListadoLocalidades.IconColor = Color.Black;
+            MenuItemListadoLocalidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuItemListadoLocalidades.Name = "MenuItemListadoLocalidades";
+            MenuItemListadoLocalidades.Size = new Size(224, 26);
+            MenuItemListadoLocalidades.Text = "Localidades";
+            MenuItemListadoLocalidades.Click += MenuItemListadoLocalidades_Click;
+            // 
             // MenuPrincipalView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -173,5 +195,7 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemProductos;
         private FontAwesome.Sharp.IconMenuItem MenuItemClientes;
         private FontAwesome.Sharp.IconMenuItem MenuItemProveedores;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem MenuItemListadoLocalidades;
     }
 }

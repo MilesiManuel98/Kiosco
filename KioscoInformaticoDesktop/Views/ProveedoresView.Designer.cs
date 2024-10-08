@@ -41,6 +41,8 @@
             btnAgregar = new FontAwesome.Sharp.IconButton();
             dataGridProveedoresView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
+            txtCbu = new TextBox();
+            label6 = new Label();
             label5 = new Label();
             comboLocalidades = new ComboBox();
             txtTelefono = new TextBox();
@@ -51,8 +53,6 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
-            txtCbu = new TextBox();
-            label6 = new Label();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
@@ -91,7 +91,7 @@
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(1029, 589);
-            tabControl.TabIndex = 2;
+            tabControl.TabIndex = 0;
             // 
             // tabPageLista
             // 
@@ -264,6 +264,23 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
+            // txtCbu
+            // 
+            txtCbu.Location = new Point(445, 279);
+            txtCbu.Margin = new Padding(3, 4, 3, 4);
+            txtCbu.Name = "txtCbu";
+            txtCbu.Size = new Size(225, 27);
+            txtCbu.TabIndex = 3;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(339, 282);
+            label6.Name = "label6";
+            label6.Size = new Size(38, 20);
+            label6.TabIndex = 19;
+            label6.Text = "Cbu:";
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -280,7 +297,7 @@
             comboLocalidades.Location = new Point(445, 358);
             comboLocalidades.Name = "comboLocalidades";
             comboLocalidades.Size = new Size(225, 28);
-            comboLocalidades.TabIndex = 3;
+            comboLocalidades.TabIndex = 4;
             // 
             // txtTelefono
             // 
@@ -364,23 +381,6 @@
             label2.Size = new Size(67, 20);
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
-            // 
-            // txtCbu
-            // 
-            txtCbu.Location = new Point(445, 279);
-            txtCbu.Margin = new Padding(3, 4, 3, 4);
-            txtCbu.Name = "txtCbu";
-            txtCbu.Size = new Size(225, 27);
-            txtCbu.TabIndex = 18;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(339, 282);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 20);
-            label6.TabIndex = 19;
-            label6.Text = "Cbu:";
             // 
             // ProveedoresView
             // 

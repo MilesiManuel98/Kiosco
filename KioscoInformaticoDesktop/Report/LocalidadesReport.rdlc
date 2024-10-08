@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>15.53867cm</Width>
+              <Width>15.52304cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.70772cm</Height>
+              <Height>0.67056cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -32,9 +32,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Id</rd:DefaultName>
-                          <Top>1.0795cm</Top>
-                          <Left>1.50283cm</Left>
-                          <Height>0.62822cm</Height>
+                          <Top>0.07056cm</Top>
+                          <Left>0.91722cm</Left>
+                          <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
                           <Style>
                             <Border>
@@ -61,10 +61,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Nombre</rd:DefaultName>
-                          <Top>1.0795cm</Top>
-                          <Left>4.00283cm</Left>
-                          <Height>0.62822cm</Height>
-                          <Width>11.09133cm</Width>
+                          <Top>0.07056cm</Top>
+                          <Left>4.18042cm</Left>
+                          <Height>0.6cm</Height>
+                          <Width>10.68444cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -103,10 +103,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSLocalidades</DataSetName>
-        <Top>0.57714cm</Top>
-        <Left>0.54187cm</Left>
-        <Height>1.70772cm</Height>
-        <Width>15.53867cm</Width>
+        <Top>0.10583cm</Top>
+        <Left>0.57009cm</Left>
+        <Height>0.67056cm</Height>
+        <Width>15.52304cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -114,20 +114,21 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.09759in</Height>
+    <Height>0.34722in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>2.86342cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Line Name="Line1">
-          <Top>2.36361cm</Top>
+          <Top>2.08703cm</Top>
+          <Left>0.48189cm</Left>
           <Height>0cm</Height>
-          <Width>16.51cm</Width>
+          <Width>15.67625cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -152,10 +153,82 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Left>2.72203cm</Left>
-          <Height>2.18722cm</Height>
-          <Width>10.6915cm</Width>
+          <Left>2.79259cm</Left>
+          <Height>1.91064cm</Height>
+          <Width>10.59272cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line3">
+          <Top>2.65176cm</Top>
+          <Left>0.48189cm</Left>
+          <Height>0cm</Height>
+          <Width>15.67625cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox5">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Código</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>2.08703cm</Top>
+          <Left>1.48731cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Nombre</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox5</rd:DefaultName>
+          <Top>2.12231cm</Top>
+          <Left>4.75051cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -174,10 +247,21 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.18722cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
+        <Line Name="Line2">
+          <Top>0.34982cm</Top>
+          <Left>0.41687cm</Left>
+          <Height>0cm</Height>
+          <Width>15.67625cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
         <Textbox Name="PageNumber">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -185,7 +269,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Pagina </Value>
+                  <Value>Página:</Value>
                   <Style />
                 </TextRun>
                 <TextRun>
@@ -197,10 +281,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.62137cm</Top>
-          <Left>12.2682cm</Left>
-          <Height>0.51533cm</Height>
-          <Width>3.81233cm</Width>
+          <Top>0.67cm</Top>
+          <Left>11.85898cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.29917cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -234,7 +319,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>aaef3d91-156f-4983-974b-490f575265f9</rd:DataSourceID>
+      <rd:DataSourceID>a5e8f5dc-52ed-45cb-932c-99a96ce66d59</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -255,7 +340,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>KioscoInformaticoDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\manue\source\repos\Kiosco\KioscoInformaticoDesktop\DataSet\KioscoInformaticoDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\alera\source\repos\Kiosco\KioscoInformaticoDesktop\DataSet\KioscoInformaticoDataSet.xsd</rd:SchemaPath>
         <rd:TableName>DSLocalidades</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -264,5 +349,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>602656b6-f7e1-476d-9172-afd4392e2ca2</rd:ReportID>
+  <rd:ReportID>91f5bbe6-e5ba-4125-bd7e-2e6a863dc3ca</rd:ReportID>
 </Report>
