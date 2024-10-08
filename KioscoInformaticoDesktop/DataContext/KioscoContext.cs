@@ -25,8 +25,6 @@ public partial class KioscoContext : DbContext
 
     public virtual DbSet<DetalleVenta> Detallesventas { get; set; }
 
-    public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
-
     public virtual DbSet<Localidad> Localidades { get; set; }
 
     public virtual DbSet<Producto> Productos { get; set; }
@@ -58,9 +56,6 @@ public partial class KioscoContext : DbContext
             entity.Property(e => e.FechaNacimiento).HasMaxLength(6);
             entity.Property(e => e.LocalidadId).HasColumnType("int(11)");
 
-            //entity.HasOne(d => d.Localidad).WithMany(p => p.Clientes)
-            //    .HasForeignKey(d => d.LocalidadId)
-            //    .HasConstraintName("FK_Clientes_Localidades_LocalidadId");
         });
 
         modelBuilder.Entity<Compra>(entity =>
@@ -80,9 +75,6 @@ public partial class KioscoContext : DbContext
                 .HasColumnName("ProveedorID");
             entity.Property(e => e.Total).HasColumnType("int(11)");
 
-            //entity.HasOne(d => d.Proveedor).WithMany(p => p.Compras)
-            //    .HasForeignKey(d => d.ProveedorID)
-            //    .HasConstraintName("FK_Compras_Proveedores_ProveedorID");
         });
 
         modelBuilder.Entity<DetalleCompra>(entity =>
@@ -98,9 +90,6 @@ public partial class KioscoContext : DbContext
             entity.Property(e => e.CompraId).HasColumnType("int(11)");
             entity.Property(e => e.ProductoId).HasColumnType("int(11)");
 
-            entity.HasOne(d => d.Producto).WithMany(p => p.DetalleCompra)
-                .HasForeignKey(d => d.ProductoId)
-                .HasConstraintName("FK_DetallesCompras_Productos_ProductoId");
         });
 
         modelBuilder.Entity<DetalleVenta>(entity =>
@@ -118,23 +107,6 @@ public partial class KioscoContext : DbContext
             entity.Property(e => e.ProductoId).HasColumnType("int(11)");
             entity.Property(e => e.VentaId).HasColumnType("int(11)");
 
-            entity.HasOne(d => d.Producto).WithMany(p => p.DetalleVenta)
-                .HasForeignKey(d => d.ProductoId)
-                .HasConstraintName("FK_DetallesVentas_Productos_ProductoId");
-
-            entity.HasOne(d => d.Venta).WithMany(p => p.Detallesventa)
-                .HasForeignKey(d => d.VentaId)
-                .HasConstraintName("FK_DetallesVentas_Ventas_VentaId");
-        });
-
-        modelBuilder.Entity<Efmigrationshistory>(entity =>
-        {
-            entity.HasKey(e => e.MigrationId).HasName("PRIMARY");
-
-            entity.ToTable("__efmigrationshistory");
-
-            entity.Property(e => e.MigrationId).HasMaxLength(150);
-            entity.Property(e => e.ProductVersion).HasMaxLength(32);
         });
 
         modelBuilder.Entity<Localidad>(entity =>
@@ -167,9 +139,6 @@ public partial class KioscoContext : DbContext
             entity.Property(e => e.CondicionIva).HasColumnType("int(11)");
             entity.Property(e => e.LocalidadId).HasColumnType("int(11)");
 
-            //entity.HasOne(d => d.Localidad).WithMany(p => p.Proveedores)
-            //    .HasForeignKey(d => d.LocalidadId)
-            //    .HasConstraintName("FK_Proveedores_Localidades_LocalidadId");
         });
 
         modelBuilder.Entity<Venta>(entity =>
@@ -185,9 +154,6 @@ public partial class KioscoContext : DbContext
             entity.Property(e => e.Fecha).HasMaxLength(6);
             entity.Property(e => e.FormaPago).HasColumnType("int(11)");
 
-            //entity.HasOne(d => d.Cliente).WithMany(p => p.Venta)
-            //    .HasForeignKey(d => d.ClienteId)
-            //    .HasConstraintName("FK_Ventas_Clientes_ClienteId");
         });
 
         OnModelCreatingPartial(modelBuilder);

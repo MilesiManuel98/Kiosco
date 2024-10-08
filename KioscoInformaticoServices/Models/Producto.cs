@@ -14,7 +14,7 @@ public partial class Producto
     [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
     public decimal Precio { get; set; }
 
-    public virtual ICollection<DetalleCompra> DetalleCompra { get; set; } = new List<DetalleCompra>();
+    public bool Eliminado { get; set; } = false;
 
-    public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
+    public bool Oferta { get; set; } = false;
 }
