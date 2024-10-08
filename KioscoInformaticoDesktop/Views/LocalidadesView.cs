@@ -74,7 +74,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageAgregarEditar);
 
         }
-        private async void iconButtonEliminar_ClickAsync(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
 
             localidadCurrent = (Localidad)ListLocalidades.Current;
@@ -97,7 +97,7 @@ namespace KioscoInformaticoDesktop.Views
         {
             this.Close();
         }
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             FiltrarLocalidades();
         }

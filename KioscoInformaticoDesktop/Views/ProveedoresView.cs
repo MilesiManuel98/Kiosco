@@ -43,11 +43,11 @@ namespace KioscoInformaticoDesktop.Views
             ListProveedores.DataSource = await proveedorService.GetAllAsync();
             dataGridProveedoresView.Columns["LocalidadId"].Visible = false;
         }
-        private void iconButtonAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabPageAgregarEditar);
         }
-        private void iconButtonEditar_Click_1(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             proveedorCurrent = (Proveedor)ListProveedores.Current;
             txtNombre.Text = proveedorCurrent.Nombre;
@@ -57,7 +57,7 @@ namespace KioscoInformaticoDesktop.Views
             comboLocalidades.SelectedValue = proveedorCurrent.LocalidadId;
             tabControl.SelectTab(tabPageAgregarEditar);
         }
-        private async void btnGuardar_Click_1(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
@@ -106,7 +106,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageLista);
 
         }
-        private async void iconButtonEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
             proveedorCurrent = (Proveedor)ListProveedores.Current;
 

@@ -180,7 +180,7 @@
             btnEliminar.Text = "Eli&minar";
             btnEliminar.TextAlign = ContentAlignment.BottomCenter;
             btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += iconButtonEliminar_Click;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -200,7 +200,7 @@
             btnEditar.Text = "&Editar";
             btnEditar.TextAlign = ContentAlignment.BottomCenter;
             btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += iconButtonEditar_Click;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
@@ -219,7 +219,7 @@
             btnAgregar.Text = "&Agregar";
             btnAgregar.TextAlign = ContentAlignment.BottomCenter;
             btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += iconButtonAgregar_Click;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // dataGridProductosView
             // 

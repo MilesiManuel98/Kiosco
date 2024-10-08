@@ -34,12 +34,12 @@ namespace KioscoInformaticoDesktop.Views
             ListaFiltrada = (List<Producto>)ListProductos.DataSource;
         }
 
-        private void iconButtonAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(tabPageAgregarEditar);
         }
 
-        private void iconButtonEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             productoCurrent = (Producto)ListProductos.Current;
             txtNombre.Text = productoCurrent.Nombre;
@@ -86,7 +86,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageLista);
         }
 
-        private async void iconButtonEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
             productoCurrent = (Producto)ListProductos.Current;
 

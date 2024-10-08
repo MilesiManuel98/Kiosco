@@ -185,7 +185,7 @@
             btnEliminar.Text = "Eli&minar";
             btnEliminar.TextAlign = ContentAlignment.BottomCenter;
             btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += iconButtonEliminar_Click;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -205,7 +205,7 @@
             btnEditar.Text = "&Editar";
             btnEditar.TextAlign = ContentAlignment.BottomCenter;
             btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += iconButtonEditar_Click_1;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
@@ -224,7 +224,7 @@
             btnAgregar.Text = "&Agregar";
             btnAgregar.TextAlign = ContentAlignment.BottomCenter;
             btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += iconButtonAgregar_Click;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // dataGridClientesView
             // 
@@ -363,7 +363,7 @@
             btnGuardar.Text = "&Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click_1;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombre
             // 
