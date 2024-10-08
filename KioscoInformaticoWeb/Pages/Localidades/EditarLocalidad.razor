@@ -1,7 +1,8 @@
 ﻿@page "/editarlocalidades"
 @inject IGenericService<Localidad> LocalidadService
 @inject NavigationManager navigationManager
-<h3>Editando una localidad</h3>
+
+<HeaderPage TitlePage="Editando una localidad" />
 
 @if (localidad == null)
 {

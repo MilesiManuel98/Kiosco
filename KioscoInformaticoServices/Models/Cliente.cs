@@ -13,11 +13,12 @@ public partial class Cliente
 
     public string Telefonos { get; set; } = null!;
 
+
     public DateTime FechaNacimiento { get; set; }
 
     public int? LocalidadId { get; set; }
 
     public virtual Localidad? Localidad { get; set; }
 
-    public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
+    //public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
 }

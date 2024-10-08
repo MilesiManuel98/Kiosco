@@ -36,11 +36,14 @@
             btnBuscar = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             txtFiltro = new TextBox();
-            iconButtonEliminar = new FontAwesome.Sharp.IconButton();
-            iconButtonEditar = new FontAwesome.Sharp.IconButton();
-            iconButtonAgregar = new FontAwesome.Sharp.IconButton();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            btnAgregar = new FontAwesome.Sharp.IconButton();
             dataGridClientesView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
+            dateTimeFechaDeNacimiento = new DateTimePicker();
+            label6 = new Label();
+            label5 = new Label();
             comboLocalidades = new ComboBox();
             txtTelefono = new TextBox();
             label4 = new Label();
@@ -50,7 +53,6 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
             label2 = new Label();
-            label5 = new Label();
             panel1.SuspendLayout();
             tabControl.SuspendLayout();
             tabPageLista.SuspendLayout();
@@ -97,9 +99,9 @@
             tabPageLista.Controls.Add(btnBuscar);
             tabPageLista.Controls.Add(label3);
             tabPageLista.Controls.Add(txtFiltro);
-            tabPageLista.Controls.Add(iconButtonEliminar);
-            tabPageLista.Controls.Add(iconButtonEditar);
-            tabPageLista.Controls.Add(iconButtonAgregar);
+            tabPageLista.Controls.Add(btnEliminar);
+            tabPageLista.Controls.Add(btnEditar);
+            tabPageLista.Controls.Add(btnAgregar);
             tabPageLista.Controls.Add(dataGridClientesView);
             tabPageLista.Location = new Point(4, 29);
             tabPageLista.Margin = new Padding(3, 4, 3, 4);
@@ -165,64 +167,64 @@
             txtFiltro.TabIndex = 7;
             txtFiltro.TextChanged += txtFiltro_TextChanged;
             // 
-            // iconButtonEliminar
+            // btnEliminar
             // 
-            iconButtonEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButtonEliminar.BackColor = Color.White;
-            iconButtonEliminar.ForeColor = Color.Black;
-            iconButtonEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            iconButtonEliminar.IconColor = Color.Black;
-            iconButtonEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEliminar.IconSize = 44;
-            iconButtonEliminar.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonEliminar.Location = new Point(888, 357);
-            iconButtonEliminar.Margin = new Padding(3, 4, 3, 4);
-            iconButtonEliminar.Name = "iconButtonEliminar";
-            iconButtonEliminar.Size = new Size(86, 75);
-            iconButtonEliminar.TabIndex = 6;
-            iconButtonEliminar.Text = "Eli&minar";
-            iconButtonEliminar.TextAlign = ContentAlignment.BottomCenter;
-            iconButtonEliminar.UseVisualStyleBackColor = false;
-            iconButtonEliminar.Click += iconButtonEliminar_Click;
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.BackColor = Color.White;
+            btnEliminar.ForeColor = Color.Black;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 44;
+            btnEliminar.ImageAlign = ContentAlignment.TopCenter;
+            btnEliminar.Location = new Point(888, 357);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(86, 75);
+            btnEliminar.TabIndex = 6;
+            btnEliminar.Text = "Eli&minar";
+            btnEliminar.TextAlign = ContentAlignment.BottomCenter;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += iconButtonEliminar_Click;
             // 
-            // iconButtonEditar
+            // btnEditar
             // 
-            iconButtonEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButtonEditar.BackColor = Color.White;
-            iconButtonEditar.ForeColor = Color.Black;
-            iconButtonEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            iconButtonEditar.IconColor = Color.Black;
-            iconButtonEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonEditar.IconSize = 45;
-            iconButtonEditar.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonEditar.Location = new Point(888, 242);
-            iconButtonEditar.Margin = new Padding(3, 4, 3, 4);
-            iconButtonEditar.Name = "iconButtonEditar";
-            iconButtonEditar.Size = new Size(86, 75);
-            iconButtonEditar.TabIndex = 5;
-            iconButtonEditar.Text = "&Editar";
-            iconButtonEditar.TextAlign = ContentAlignment.BottomCenter;
-            iconButtonEditar.UseVisualStyleBackColor = false;
-            iconButtonEditar.Click += iconButtonEditar_Click_1;
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEditar.BackColor = Color.White;
+            btnEditar.ForeColor = Color.Black;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditar.IconColor = Color.Black;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.IconSize = 45;
+            btnEditar.ImageAlign = ContentAlignment.TopCenter;
+            btnEditar.Location = new Point(888, 234);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(86, 75);
+            btnEditar.TabIndex = 5;
+            btnEditar.Text = "&Editar";
+            btnEditar.TextAlign = ContentAlignment.BottomCenter;
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += iconButtonEditar_Click_1;
             // 
-            // iconButtonAgregar
+            // btnAgregar
             // 
-            iconButtonAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButtonAgregar.BackColor = Color.White;
-            iconButtonAgregar.ForeColor = Color.Black;
-            iconButtonAgregar.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            iconButtonAgregar.IconColor = Color.Black;
-            iconButtonAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonAgregar.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonAgregar.Location = new Point(888, 125);
-            iconButtonAgregar.Margin = new Padding(3, 4, 3, 4);
-            iconButtonAgregar.Name = "iconButtonAgregar";
-            iconButtonAgregar.Size = new Size(86, 75);
-            iconButtonAgregar.TabIndex = 4;
-            iconButtonAgregar.Text = "&Agregar";
-            iconButtonAgregar.TextAlign = ContentAlignment.BottomCenter;
-            iconButtonAgregar.UseVisualStyleBackColor = false;
-            iconButtonAgregar.Click += iconButtonAgregar_Click;
+            btnAgregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnAgregar.BackColor = Color.White;
+            btnAgregar.ForeColor = Color.Black;
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            btnAgregar.IconColor = Color.Black;
+            btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAgregar.ImageAlign = ContentAlignment.TopCenter;
+            btnAgregar.Location = new Point(888, 125);
+            btnAgregar.Margin = new Padding(3, 4, 3, 4);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(86, 75);
+            btnAgregar.TabIndex = 4;
+            btnAgregar.Text = "&Agregar";
+            btnAgregar.TextAlign = ContentAlignment.BottomCenter;
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += iconButtonAgregar_Click;
             // 
             // dataGridClientesView
             // 
@@ -241,6 +243,8 @@
             // 
             // tabPageAgregarEditar
             // 
+            tabPageAgregarEditar.Controls.Add(dateTimeFechaDeNacimiento);
+            tabPageAgregarEditar.Controls.Add(label6);
             tabPageAgregarEditar.Controls.Add(label5);
             tabPageAgregarEditar.Controls.Add(comboLocalidades);
             tabPageAgregarEditar.Controls.Add(txtTelefono);
@@ -260,13 +264,40 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
+            // dateTimeFechaDeNacimiento
+            // 
+            dateTimeFechaDeNacimiento.Format = DateTimePickerFormat.Short;
+            dateTimeFechaDeNacimiento.Location = new Point(445, 355);
+            dateTimeFechaDeNacimiento.Name = "dateTimeFechaDeNacimiento";
+            dateTimeFechaDeNacimiento.Size = new Size(225, 27);
+            dateTimeFechaDeNacimiento.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(257, 362);
+            label6.Name = "label6";
+            label6.Size = new Size(152, 20);
+            label6.TabIndex = 18;
+            label6.Text = "Fecha de Nacimiento:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(332, 281);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 20);
+            label5.TabIndex = 17;
+            label5.Text = "Localidad:";
+            // 
             // comboLocalidades
             // 
+            comboLocalidades.DropDownStyle = ComboBoxStyle.DropDownList;
             comboLocalidades.FormattingEnabled = true;
-            comboLocalidades.Location = new Point(445, 283);
+            comboLocalidades.Location = new Point(445, 278);
             comboLocalidades.Name = "comboLocalidades";
             comboLocalidades.Size = new Size(225, 28);
-            comboLocalidades.TabIndex = 16;
+            comboLocalidades.TabIndex = 3;
             // 
             // txtTelefono
             // 
@@ -274,7 +305,7 @@
             txtTelefono.Margin = new Padding(3, 4, 3, 4);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(225, 27);
-            txtTelefono.TabIndex = 15;
+            txtTelefono.TabIndex = 2;
             // 
             // label4
             // 
@@ -291,7 +322,7 @@
             txtDireccion.Margin = new Padding(3, 4, 3, 4);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(225, 27);
-            txtDireccion.TabIndex = 13;
+            txtDireccion.TabIndex = 1;
             // 
             // txtPrecio
             // 
@@ -308,11 +339,11 @@
             btnCancelar.IconColor = Color.Black;
             btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(587, 367);
+            btnCancelar.Location = new Point(584, 468);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(114, 80);
-            btnCancelar.TabIndex = 11;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.UseVisualStyleBackColor = true;
@@ -324,11 +355,11 @@
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(317, 367);
+            btnGuardar.Location = new Point(314, 468);
             btnGuardar.Margin = new Padding(3, 4, 3, 4);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(114, 80);
-            btnGuardar.TabIndex = 10;
+            btnGuardar.TabIndex = 5;
             btnGuardar.Text = "&Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = true;
@@ -340,7 +371,7 @@
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(225, 27);
-            txtNombre.TabIndex = 9;
+            txtNombre.TabIndex = 0;
             // 
             // label2
             // 
@@ -350,15 +381,6 @@
             label2.Size = new Size(67, 20);
             label2.TabIndex = 8;
             label2.Text = "Nombre:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(332, 286);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 20);
-            label5.TabIndex = 17;
-            label5.Text = "Localidad:";
             // 
             // ClientesView
             // 
@@ -387,18 +409,15 @@
         private Label label1;
         private TabControl tabControl;
         private TabPage tabPageLista;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton btnAgregar;
         private DataGridView dataGridClientesView;
         private TabPage tabPageAgregarEditar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private TextBox txtNombre;
         private Label label2;
-        private FontAwesome.Sharp.IconButton iconButtonEliminar;
-        private FontAwesome.Sharp.IconButton iconButtonEditar;
-        private FontAwesome.Sharp.IconButton iconButtonAgregar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnAgregar;
         private Label txtPrecio;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnBuscar;
@@ -409,5 +428,7 @@
         private TextBox txtDireccion;
         private ComboBox comboLocalidades;
         private Label label5;
+        private DateTimePicker dateTimeFechaDeNacimiento;
+        private Label label6;
     }
 }
