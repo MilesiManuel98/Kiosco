@@ -1,5 +1,5 @@
 ﻿@page "/nuevocliente"
-@inject IGenericService<Cliente> ClienteService
+@inject IClienteService ClienteService
 @inject NavigationManager NavigationManager
 
 <HeaderPage TitlePage="Nuevo Cliente" />
@@ -28,6 +28,17 @@ else
             <InputText id="Telefonos" class="form-control" @bind-Value="cliente.Telefonos" />
             <ValidationMessage For="@(() => cliente.Telefonos)" />
         </div>
+@*         <div class="form-group mb-2">
+            <label for="LocalidadId">Localidad:</label>
+            <InputSelect id="LocalidadId" class="form-control" @bind-Value="cliente.LocalidadId">
+                <option value="">Seleccione una localidad</option>
+                @foreach (var localidad in localidades)
+                {
+                    <option value="@localidad.Id">@localidad.Nombre</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => cliente.LocalidadId)" />
+        </div> *@
 
         <button type="submit" class="btn btn-primary mb-2">Guardar</button>
     </EditForm>

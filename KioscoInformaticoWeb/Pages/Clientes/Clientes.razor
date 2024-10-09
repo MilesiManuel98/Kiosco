@@ -1,5 +1,5 @@
 ﻿@page "/clientes"
-@inject IGenericService<Cliente> ClienteService
+@inject IClienteService ClienteService
 @inject NavigationManager NavigationManager
 @inject SweetAlertService SweetAlert
 
@@ -18,7 +18,8 @@ else
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Direccion</th>
-                <th>Telefono</th>
+                <th>Telefonos</th>
+                <th>Localidad</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -32,6 +33,7 @@ else
                     <td>@cliente.Nombre</td>
                     <td>@cliente.Direccion</td>
                     <td>@cliente.Telefonos</td>
+                    <td>@cliente.LocalidadId</td>
                     <td>
                         <a href="/editarcliente?IdClienteEditado=@cliente.Id">Editar</a>
                     </td>

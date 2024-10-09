@@ -1,5 +1,5 @@
 ﻿@page "/editarcliente"
-@inject IGenericService<Cliente> ClienteService
+@inject IClienteService ClienteService
 @inject NavigationManager navigationManager
 
 <HeaderPage TitlePage="Editando un cliente" />
@@ -26,6 +26,16 @@ else
             <label for="Telefonos">Telefonos</label>
             <InputText id="Telefonos" class="form-control" @bind-Value="cliente.Telefonos" />
         </div>
+@*         <div>
+            <label for="LocalidadId">Localidad</label>
+            <InputSelect id="LocalidadId" class="form-control" @bind-Value="cliente.LocalidadId">
+                <option value="">Seleccione una localidad</option>
+                @foreach (var localidad in localidades)
+                {
+                    <option value="@localidad.Id">@localidad.Nombre</option>
+                }
+            </InputSelect>
+        </div> *@
 
         <button type="submit" class="btn btn-primary">Guardar</button>
     </EditForm>
