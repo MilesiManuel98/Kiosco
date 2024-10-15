@@ -120,7 +120,7 @@
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.86342cm</Height>
+      <Height>2.96925cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -145,7 +145,7 @@
                   <Value>Lista de Localidades</Value>
                   <Style>
                     <FontFamily>Agency FB</FontFamily>
-                    <FontSize>48pt</FontSize>
+                    <FontSize>28pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -153,9 +153,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Left>2.79259cm</Left>
-          <Height>1.91064cm</Height>
-          <Width>10.59272cm</Width>
+          <Top>0.381cm</Top>
+          <Left>5.24792cm</Left>
+          <Height>1.27564cm</Height>
+          <Width>6.31705cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

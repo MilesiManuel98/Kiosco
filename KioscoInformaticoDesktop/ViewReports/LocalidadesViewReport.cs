@@ -15,12 +15,11 @@ namespace KioscoInformaticoDesktop.ViewReport
 {
     public partial class LocalidadesViewReport : Form
     {
-        ReportViewer reporte;
+        ReportViewer reporte = new ReportViewer() ;
         ILocalidadService localidadService = new LocalidadService();
         public LocalidadesViewReport()
         {
             InitializeComponent();
-            reporte = new ReportViewer();
 
             reporte.Dock = DockStyle.Fill;
 
@@ -33,6 +32,9 @@ namespace KioscoInformaticoDesktop.ViewReport
             var localidades = await localidadService.GetAllAsync();
             reporte.LocalReport.DataSources.Add(new ReportDataSource("DSLocalidades", localidades));
             reporte.SetDisplayMode(DisplayMode.PrintLayout);
+            //definimos zoom al 100%
+            reporte.ZoomMode = ZoomMode.Percent;
+            reporte.ZoomPercent = 100;
             reporte.RefreshReport();
         }
     }

@@ -43,6 +43,12 @@ namespace KioscoInformaticoDesktop
             proveedoresView.ShowDialog();
         }
 
+        private void MenuItemListadoClientes_Click(object sender, EventArgs e)
+        {
+            ClientesViewReport clientesViewReport = new ClientesViewReport();
+            clientesViewReport.ShowDialog();
+        }
+
         private void MenuItemListadoLocalidades_Click(object sender, EventArgs e)
         {
             LocalidadesViewReport localidadesViewReport = new LocalidadesViewReport();
