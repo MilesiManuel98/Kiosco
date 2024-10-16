@@ -1,16 +1,18 @@
-﻿@page "/nuevocliente"
+﻿@page "/nuevoeditarcliente"
 @inject IClienteService ClienteService
+@inject ILocalidadService LocalidadService
 @inject NavigationManager NavigationManager
+@inject SweetAlertService SweetAlert
 
 <HeaderPage TitlePage="Nuevo Cliente" />
 
-@if (cliente == null)
+@if (cliente == null || localidades == null)
 {
     <p><em>Cargando...</em></p>
 }
 else
 {
-    <EditForm Model="cliente" OnValidSubmit="AgregarCliente">
+    <EditForm Model="cliente" OnValidSubmit="Guardar">
         <DataAnnotationsValidator />
 
         <div class="form-group mb-2">
@@ -28,7 +30,7 @@ else
             <InputText id="Telefonos" class="form-control" @bind-Value="cliente.Telefonos" />
             <ValidationMessage For="@(() => cliente.Telefonos)" />
         </div>
-@*         <div class="form-group mb-2">
+        <div class="form-group mb-2">
             <label for="LocalidadId">Localidad:</label>
             <InputSelect id="LocalidadId" class="form-control" @bind-Value="cliente.LocalidadId">
                 <option value="">Seleccione una localidad</option>
@@ -38,32 +40,40 @@ else
                 }
             </InputSelect>
             <ValidationMessage For="@(() => cliente.LocalidadId)" />
-        </div> *@
+        </div>
 
         <button type="submit" class="btn btn-primary mb-2">Guardar</button>
+        <ValidationSummary />
     </EditForm>
 }
 
 @code {
     [SupplyParameterFromQuery]
     [Parameter]
-    public int IdClienteEditada { get; set; }
+    public int IdClienteEditado { get; set; }
 
-    private Cliente cliente = new Cliente();
+    private Cliente cliente;
+    List<Localidad> localidades = new List<Localidad>();
 
     protected override async Task OnInitializedAsync()
     {
-        if (IdClienteEditada != 0)
+        if (IdClienteEditado != 0)
         {
-            cliente = await ClienteService.GetByIdAsync(IdClienteEditada) ?? new Cliente();
+            cliente = await ClienteService.GetByIdAsync(IdClienteEditado) ?? new Cliente();
         }
+        else
+        {
+            cliente = new Cliente();
+        }
+        localidades = await LocalidadService.GetAllAsync();
     }
 
-    private async Task AgregarCliente()
+    private async Task Guardar()
     {
+
         if (cliente != null)
         {
-            if (IdClienteEditada == 0)
+            if (IdClienteEditado == 0)
             {
                 await ClienteService.AddAsync(cliente);
             }

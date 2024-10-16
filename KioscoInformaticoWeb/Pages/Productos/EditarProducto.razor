@@ -12,7 +12,6 @@ else
 {
     <EditForm Model="producto" OnValidSubmit="Guardar">
         <DataAnnotationsValidator />
-        <ValidationSummary />
 
         <div class="form-group">
             <label for="Nombre">Nombre</label>
@@ -24,6 +23,7 @@ else
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
+        <ValidationSummary />
     </EditForm>
 }
 
