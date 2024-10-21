@@ -60,7 +60,7 @@ namespace KioscoInformaticoApp.ViewModels
             var productosFiltrados = productosListToFilter.Where(p => p.Nombre.Contains(filterProducts)).ToList();
             Productos = new ObservableCollection<Producto>(productosFiltrados);
         }
-        private async Task ObtenerProductos()
+        public async Task ObtenerProductos()
         {
             ActivityStart = true;
             productosListToFilter = await productoService.GetAllAsync();
