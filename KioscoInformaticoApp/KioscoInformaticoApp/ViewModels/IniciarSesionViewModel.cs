@@ -26,7 +26,7 @@ namespace KioscoInformaticoApp.ViewModels
         private bool recordarContraseña;
         public bool RecordarContraseña
         {
-            get { return recordarContraseña;}
+            get { return recordarContraseña; }
             set { recordarContraseña = value; }
 
         }

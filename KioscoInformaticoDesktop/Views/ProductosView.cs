@@ -114,7 +114,7 @@ namespace KioscoInformaticoDesktop.Views
 
         private void FiltrarProductos()
         {
-            var productosFiltrados = ListaFiltrada.Where(p => p.Nombre.ToUpper().Contains(txtFiltro.Text)).ToList();
+            var productosFiltrados = ListaFiltrada.Where(p => p.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper())).ToList();
             ListProductos.DataSource = productosFiltrados;
         }
 
