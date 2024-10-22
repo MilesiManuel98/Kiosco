@@ -121,7 +121,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Telefonos</rd:DefaultName>
-                          <Top>0.03528cm</Top>
+                          <Top>0cm</Top>
                           <Left>10.49891cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
@@ -162,7 +162,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DSClientes</DataSetName>
         <Top>0.10583cm</Top>
         <Left>0.57009cm</Left>
         <Height>1.51695cm</Height>
@@ -444,7 +444,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DSClientes">
       <Query>
         <DataSourceName>KioscoInformaticoDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

@@ -1,4 +1,6 @@
-﻿using KioscoInformaticoApp.Class;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using KioscoInformaticoApp.Class;
+using KioscoInformaticoApp.Utils;
 using KioscoInformaticoServices.Models;
 using KioscoInformaticoServices.Services;
 using System;
@@ -24,7 +26,19 @@ namespace KioscoInformaticoApp.ViewModels
             }
 		}
 
-		private ObservableCollection<Producto> productos;
+        //https://chatgpt.com/share/9ab527ab-34a6-426c-b7a7-362c38e460a7
+        private bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<Producto> productos;
 		public ObservableCollection<Producto> Productos
 		{
 			get { return productos; }
@@ -34,26 +48,29 @@ namespace KioscoInformaticoApp.ViewModels
 		}
         private List<Producto>? productosListToFilter;
 
-        private bool activityStart;
-        public bool ActivityStart
-        {
-            get { return activityStart; }
-            set 
-            {
-                activityStart = value; 
-                OnPropertyChanged(); 
-            }
-        }
-
         public Command ObtenerProductosCommand { get; }
         public Command FiltrarProductosCommand { get; }
+        public Command AgregarProductoCommand { get; }
+        public Command AbrirOfertasCommand { get; }
 
         public ProductosViewModel()
         {
             ObtenerProductosCommand = new Command(async () => await ObtenerProductos());
             FiltrarProductosCommand = new Command(async () => await FiltrarProductos());
+            AgregarProductoCommand = new Command(async () => await AgregarProducto());
+            AbrirOfertasCommand = new Command(async () => await AbrirOfertas());
+            ObtenerProductos();
         }
 
+        private async Task AbrirOfertas()
+        {
+            WeakReferenceMessenger.Default.Send(new Message("AbrirOfertas"));
+        }
+
+        private async Task AgregarProducto()
+        {
+            WeakReferenceMessenger.Default.Send(new Message("AgregarProducto"));
+        }
 
         private async Task FiltrarProductos()
         {
@@ -62,10 +79,11 @@ namespace KioscoInformaticoApp.ViewModels
         }
         public async Task ObtenerProductos()
         {
-            ActivityStart = true;
+            FilterProducts = string.Empty;
+            IsRefreshing = true;
             productosListToFilter = await productoService.GetAllAsync();
             Productos = new ObservableCollection<Producto>(productosListToFilter);
-            ActivityStart = false;
+            IsRefreshing = false;
         }
     }
 }

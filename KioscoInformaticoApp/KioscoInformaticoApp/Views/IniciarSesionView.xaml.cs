@@ -6,11 +6,10 @@ namespace KioscoInformaticoApp.Views;
 
 public partial class IniciarSesionView : ContentPage
 {
-	public IniciarSesionView()
-	{
-		InitializeComponent();
+    public IniciarSesionView()
+    {
+        InitializeComponent();
         //BindingContext = new IniciarSesionViewModel();
-        /////CÓDIGO QUE para preparar la recepción de mensajes y la llamada al método RecibirMensaje
         WeakReferenceMessenger.Default.Register<Message>(this, (r, mensaje) =>
         {
             OnReceiveMessage(mensaje);
@@ -27,10 +26,10 @@ public partial class IniciarSesionView : ContentPage
         {
             await Navigation.PushAsync(new ProductosView());
         }
-        //if (mensaje.Value == "AgregarProducto")
-        //{
-        //    await Navigation.PushAsync(new AddEditProductoView());
-        //}
+        if (mensaje.Value == "AgregarProducto")
+        {
+            await Navigation.PushAsync(new AddEditProductoView());
+        }
         if (mensaje.Value == "CerrarVentana")
         {
             await Navigation.PopAsync();

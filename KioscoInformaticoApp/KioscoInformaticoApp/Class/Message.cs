@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace KioscoInformaticoApp.Utils
+namespace KioscoInformaticoApp.Class
 {
     class Message : ValueChangedMessage<string>
     {
