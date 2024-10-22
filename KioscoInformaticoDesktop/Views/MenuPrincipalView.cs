@@ -54,5 +54,11 @@ namespace KioscoInformaticoDesktop
             LocalidadesViewReport localidadesViewReport = new LocalidadesViewReport();
             localidadesViewReport.ShowDialog();
         }
+
+        private void MenuItemVentas_Click(object sender, EventArgs e)
+        {
+            VentasView ventasView = new VentasView();
+            ventasView.ShowDialog();
+        }
     }
 }
