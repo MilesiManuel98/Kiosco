@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.Messaging;
-using KioscoInformaticoApp.Utils;
+using KioscoInformaticoApp.Class;
 using KioscoInformaticoApp.ViewModels;
 
 namespace KioscoInformaticoApp.Views;

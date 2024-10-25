@@ -1,4 +1,5 @@
 ﻿using KioscoInformaticoDesktop.ExtensionMethods;
+using KioscoInformaticoDesktop.ViewReports;
 using KioscoInformaticoServices.Enums;
 using KioscoInformaticoServices.Models;
 using KioscoInformaticoServices.Services;
@@ -113,15 +114,16 @@ namespace KioscoInformaticoDesktop.Views
 
         private async void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
+            
             venta.ClienteId = (int)comboBoxClientes.SelectedValue;
+            venta.Cliente = (Cliente)comboBoxClientes.SelectedItem;
             venta.FormaPago = (FormaDePagoEnum)comboBoxFormasDePago.SelectedValue;
             venta.Fecha = DateTime.Now;
             venta.Iva = venta.Total * 0.21m;
             venta.Total = numericTotal.Value;
-            venta.Cliente = null;
-            venta.DetallesVenta.ToList().ForEach(dv => dv.Producto = null);
-            venta.DetallesVenta.ToList().ForEach(dv => dv.Venta = null);
-            await ventaService.AddAsync(venta);
+            var nuevaVenta = await ventaService.AddAsync(venta);
+            var facturaVenta = new FacturaVentaViewReport(nuevaVenta);
+            facturaVenta.ShowDialog();
         }
     }
 }

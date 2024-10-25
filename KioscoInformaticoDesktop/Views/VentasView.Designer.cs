@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dateTimeFecha = new DateTimePicker();
             label1 = new Label();
             comboBoxFormasDePago = new ComboBox();
@@ -63,7 +63,7 @@
             // 
             dateTimeFecha.Enabled = false;
             dateTimeFecha.Format = DateTimePickerFormat.Short;
-            dateTimeFecha.Location = new Point(764, 26);
+            dateTimeFecha.Location = new Point(566, 17);
             dateTimeFecha.Name = "dateTimeFecha";
             dateTimeFecha.Size = new Size(102, 27);
             dateTimeFecha.TabIndex = 0;
@@ -71,7 +71,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(708, 31);
+            label1.Location = new Point(510, 22);
             label1.Name = "label1";
             label1.Size = new Size(50, 20);
             label1.TabIndex = 1;
@@ -108,13 +108,13 @@
             comboBoxClientes.FormattingEnabled = true;
             comboBoxClientes.Location = new Point(252, 42);
             comboBoxClientes.Name = "comboBoxClientes";
-            comboBoxClientes.Size = new Size(294, 28);
+            comboBoxClientes.Size = new Size(215, 28);
             comboBoxClientes.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 16);
+            label4.Location = new Point(3, 15);
             label4.Name = "label4";
             label4.Size = new Size(72, 20);
             label4.TabIndex = 7;
@@ -123,7 +123,7 @@
             // comboBoxProductos
             // 
             comboBoxProductos.FormattingEnabled = true;
-            comboBoxProductos.Location = new Point(3, 39);
+            comboBoxProductos.Location = new Point(3, 38);
             comboBoxProductos.Name = "comboBoxProductos";
             comboBoxProductos.Size = new Size(271, 28);
             comboBoxProductos.TabIndex = 6;
@@ -131,6 +131,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.ButtonFace;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label7);
             panel1.Controls.Add(numericSubtotal);
@@ -142,13 +143,13 @@
             panel1.Controls.Add(label4);
             panel1.Location = new Point(12, 83);
             panel1.Name = "panel1";
-            panel1.Size = new Size(854, 102);
+            panel1.Size = new Size(661, 102);
             panel1.TabIndex = 8;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(597, 16);
+            label7.Location = new Point(534, 15);
             label7.Name = "label7";
             label7.Size = new Size(68, 20);
             label7.TabIndex = 13;
@@ -158,17 +159,17 @@
             // 
             numericSubtotal.DecimalPlaces = 2;
             numericSubtotal.Enabled = false;
-            numericSubtotal.Location = new Point(597, 40);
+            numericSubtotal.Location = new Point(534, 38);
             numericSubtotal.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericSubtotal.Name = "numericSubtotal";
             numericSubtotal.Size = new Size(121, 27);
             numericSubtotal.TabIndex = 12;
-            numericSubtotal.TextAlign = HorizontalAlignment.Right;
+            numericSubtotal.TextAlign = HorizontalAlignment.Center;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(459, 16);
+            label6.Location = new Point(407, 14);
             label6.Name = "label6";
             label6.Size = new Size(72, 20);
             label6.TabIndex = 11;
@@ -176,7 +177,7 @@
             // 
             // numericCantidad
             // 
-            numericCantidad.Location = new Point(459, 40);
+            numericCantidad.Location = new Point(407, 38);
             numericCantidad.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericCantidad.Name = "numericCantidad";
             numericCantidad.Size = new Size(121, 27);
@@ -187,7 +188,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(321, 16);
+            label5.Location = new Point(280, 14);
             label5.Name = "label5";
             label5.Size = new Size(53, 20);
             label5.TabIndex = 9;
@@ -197,12 +198,12 @@
             // 
             numericPrecio.DecimalPlaces = 2;
             numericPrecio.Enabled = false;
-            numericPrecio.Location = new Point(321, 40);
+            numericPrecio.Location = new Point(280, 38);
             numericPrecio.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericPrecio.Name = "numericPrecio";
             numericPrecio.Size = new Size(121, 27);
             numericPrecio.TabIndex = 8;
-            numericPrecio.TextAlign = HorizontalAlignment.Right;
+            numericPrecio.TextAlign = HorizontalAlignment.Center;
             numericPrecio.ValueChanged += numericPrecio_ValueChanged;
             // 
             // btnAgregar
@@ -213,7 +214,7 @@
             btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAgregar.IconSize = 50;
             btnAgregar.ImageAlign = ContentAlignment.TopCenter;
-            btnAgregar.Location = new Point(764, 192);
+            btnAgregar.Location = new Point(571, 222);
             btnAgregar.Margin = new Padding(3, 4, 3, 4);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(102, 75);
@@ -227,27 +228,27 @@
             // 
             gridDetallesVenta.AllowUserToAddRows = false;
             gridDetallesVenta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            gridDetallesVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            gridDetallesVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             gridDetallesVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridDetallesVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            gridDetallesVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            gridDetallesVenta.DefaultCellStyle = dataGridViewCellStyle4;
             gridDetallesVenta.Location = new Point(12, 191);
             gridDetallesVenta.Name = "gridDetallesVenta";
             gridDetallesVenta.ReadOnly = true;
             gridDetallesVenta.RowHeadersWidth = 51;
             gridDetallesVenta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridDetallesVenta.Size = new Size(746, 233);
+            gridDetallesVenta.Size = new Size(548, 233);
             gridDetallesVenta.TabIndex = 9;
             gridDetallesVenta.DataBindingComplete += gridDetallesVenta_DataBindingComplete;
             // 
@@ -261,7 +262,7 @@
             btnQuitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnQuitar.IconSize = 44;
             btnQuitar.ImageAlign = ContentAlignment.TopCenter;
-            btnQuitar.Location = new Point(764, 315);
+            btnQuitar.Location = new Point(571, 322);
             btnQuitar.Margin = new Padding(3, 4, 3, 4);
             btnQuitar.Name = "btnQuitar";
             btnQuitar.Size = new Size(102, 75);
@@ -274,7 +275,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(557, 447);
+            label8.Location = new Point(371, 444);
             label8.Name = "label8";
             label8.Size = new Size(96, 20);
             label8.TabIndex = 15;
@@ -284,12 +285,12 @@
             // 
             numericTotal.DecimalPlaces = 2;
             numericTotal.Enabled = false;
-            numericTotal.Location = new Point(557, 471);
+            numericTotal.Location = new Point(371, 467);
             numericTotal.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericTotal.Name = "numericTotal";
             numericTotal.Size = new Size(121, 27);
             numericTotal.TabIndex = 14;
-            numericTotal.TextAlign = HorizontalAlignment.Right;
+            numericTotal.TextAlign = HorizontalAlignment.Center;
             // 
             // btnFinalizarVenta
             // 
@@ -299,7 +300,7 @@
             btnFinalizarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFinalizarVenta.IconSize = 50;
             btnFinalizarVenta.ImageAlign = ContentAlignment.TopCenter;
-            btnFinalizarVenta.Location = new Point(708, 436);
+            btnFinalizarVenta.Location = new Point(515, 436);
             btnFinalizarVenta.Margin = new Padding(3, 4, 3, 4);
             btnFinalizarVenta.Name = "btnFinalizarVenta";
             btnFinalizarVenta.Size = new Size(158, 75);
@@ -313,7 +314,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(878, 524);
+            ClientSize = new Size(685, 524);
             Controls.Add(btnFinalizarVenta);
             Controls.Add(label8);
             Controls.Add(btnAgregar);

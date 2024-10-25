@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
-using KioscoInformaticoApp.Utils;
 using KioscoInformaticoApp.Class;
 using System;
 using System.Collections.Generic;
