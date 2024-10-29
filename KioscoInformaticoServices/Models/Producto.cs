@@ -10,9 +10,13 @@ public partial class Producto
     [Required]
     public string Nombre { get; set; } = null!;
     [Required]
-    [DataType(DataType.Currency)]
-    [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
-    public decimal Precio { get; set; }
+    private decimal precio;
+    [Required]
+    public decimal Precio
+    {
+        get => Math.Round(precio, 2);
+        set => precio = Math.Round(value, 2);
+    }
 
     public bool Eliminado { get; set; } = false;
 

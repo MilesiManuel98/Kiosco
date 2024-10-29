@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dateTimeFecha = new DateTimePicker();
             label1 = new Label();
             comboBoxFormasDePago = new ComboBox();
@@ -82,7 +82,7 @@
             comboBoxFormasDePago.FormattingEnabled = true;
             comboBoxFormasDePago.Location = new Point(12, 42);
             comboBoxFormasDePago.Name = "comboBoxFormasDePago";
-            comboBoxFormasDePago.Size = new Size(197, 28);
+            comboBoxFormasDePago.Size = new Size(250, 28);
             comboBoxFormasDePago.TabIndex = 2;
             // 
             // label2
@@ -97,7 +97,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(252, 17);
+            label3.Location = new Point(289, 17);
             label3.Name = "label3";
             label3.Size = new Size(58, 20);
             label3.TabIndex = 5;
@@ -106,7 +106,7 @@
             // comboBoxClientes
             // 
             comboBoxClientes.FormattingEnabled = true;
-            comboBoxClientes.Location = new Point(252, 42);
+            comboBoxClientes.Location = new Point(289, 42);
             comboBoxClientes.Name = "comboBoxClientes";
             comboBoxClientes.Size = new Size(215, 28);
             comboBoxClientes.TabIndex = 4;
@@ -228,21 +228,21 @@
             // 
             gridDetallesVenta.AllowUserToAddRows = false;
             gridDetallesVenta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            gridDetallesVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            gridDetallesVenta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridDetallesVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridDetallesVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            gridDetallesVenta.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            gridDetallesVenta.DefaultCellStyle = dataGridViewCellStyle2;
             gridDetallesVenta.Location = new Point(12, 191);
             gridDetallesVenta.Name = "gridDetallesVenta";
             gridDetallesVenta.ReadOnly = true;

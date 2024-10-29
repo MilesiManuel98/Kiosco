@@ -26,7 +26,6 @@ namespace KioscoInformaticoDesktop.Views
         {
             InitializeComponent();
             AjustePantalla();
-
         }
 
         private async void AjustePantalla()
@@ -37,13 +36,18 @@ namespace KioscoInformaticoDesktop.Views
             );
 
             comboBoxClientes.DisplayMember = "Nombre";
-            comboBoxClientes.ValueMember = "Id";
+            comboBoxClientes.ValueMember = "Id"; 
+            comboBoxClientes.SelectedIndex = -1;
+            comboBoxClientes.Text = "Seleccione un cliente";
 
             comboBoxProductos.DisplayMember = "Nombre";
             comboBoxProductos.ValueMember = "Id";
             comboBoxProductos.SelectedIndex = -1;
+            comboBoxProductos.Text = "Seleccione un producto";
 
             comboBoxFormasDePago.DataSource = Enum.GetValues(typeof(FormaDePagoEnum));
+            comboBoxFormasDePago.SelectedIndex = -1;
+            comboBoxFormasDePago.Text = "Seleccione una forma de pago";
 
             numericPrecio.Value = 0;
             numericCantidad.Value = 1;
@@ -84,6 +88,7 @@ namespace KioscoInformaticoDesktop.Views
             venta.DetallesVenta.Add(detalleVenta);
             gridDetallesVenta.DataSource = venta.DetallesVenta.ToList();
             comboBoxProductos.SelectedIndex = -1;
+            comboBoxProductos.Text = "Seleccione un producto";
             comboBoxProductos.Focus();
             ActualizarTotalFctura();
         }
