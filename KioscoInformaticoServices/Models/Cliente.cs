@@ -22,5 +22,9 @@ public partial class Cliente
     public virtual Localidad? Localidad { get; set; }
 
     public bool Eliminado { get; set; } = false;
-
+    
+    public override string ToString()
+    {
+        return Nombre;
+    }
 }

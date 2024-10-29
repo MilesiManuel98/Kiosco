@@ -42,7 +42,10 @@
             MenuItemListadoLocalidades = new FontAwesome.Sharp.IconMenuItem();
             MenuItemListadoClientes = new FontAwesome.Sharp.IconMenuItem();
             MenuItemListadoVentas = new FontAwesome.Sharp.IconMenuItem();
+            toolStrip1 = new ToolStrip();
+            iconToolHistoricoVentas = new FontAwesome.Sharp.IconToolStripButton();
             menuStrip1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -75,7 +78,7 @@
             MenuItemVentas.IconSize = 28;
             MenuItemVentas.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemVentas.Name = "MenuItemVentas";
-            MenuItemVentas.Size = new Size(143, 34);
+            MenuItemVentas.Size = new Size(232, 34);
             MenuItemVentas.Text = "Ventas";
             MenuItemVentas.Click += MenuItemVentas_Click;
             // 
@@ -180,7 +183,7 @@
             MenuItemListadoLocalidades.IconSize = 28;
             MenuItemListadoLocalidades.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemListadoLocalidades.Name = "MenuItemListadoLocalidades";
-            MenuItemListadoLocalidades.Size = new Size(232, 34);
+            MenuItemListadoLocalidades.Size = new Size(179, 34);
             MenuItemListadoLocalidades.Text = "Localidades";
             MenuItemListadoLocalidades.Click += MenuItemListadoLocalidades_Click;
             // 
@@ -192,7 +195,7 @@
             MenuItemListadoClientes.IconSize = 28;
             MenuItemListadoClientes.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemListadoClientes.Name = "MenuItemListadoClientes";
-            MenuItemListadoClientes.Size = new Size(232, 34);
+            MenuItemListadoClientes.Size = new Size(179, 34);
             MenuItemListadoClientes.Text = "Clientes";
             MenuItemListadoClientes.Click += MenuItemListadoClientes_Click;
             // 
@@ -204,14 +207,37 @@
             MenuItemListadoVentas.IconSize = 28;
             MenuItemListadoVentas.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemListadoVentas.Name = "MenuItemListadoVentas";
-            MenuItemListadoVentas.Size = new Size(232, 34);
+            MenuItemListadoVentas.Size = new Size(179, 34);
             MenuItemListadoVentas.Text = "Ventas";
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iconToolHistoricoVentas });
+            toolStrip1.Location = new Point(0, 58);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(914, 27);
+            toolStrip1.TabIndex = 1;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // iconToolHistoricoVentas
+            // 
+            iconToolHistoricoVentas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            iconToolHistoricoVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconToolHistoricoVentas.IconColor = Color.Black;
+            iconToolHistoricoVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconToolHistoricoVentas.ImageTransparentColor = Color.Magenta;
+            iconToolHistoricoVentas.Name = "iconToolHistoricoVentas";
+            iconToolHistoricoVentas.Size = new Size(29, 24);
+            iconToolHistoricoVentas.Text = "Historico Ventas";
+            iconToolHistoricoVentas.Click += iconToolHistoricoVentas_Click;
             // 
             // MenuPrincipalView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
@@ -222,6 +248,8 @@
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,5 +270,7 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemListadoLocalidades;
         private FontAwesome.Sharp.IconMenuItem MenuItemVentas;
         private FontAwesome.Sharp.IconMenuItem MenuItemListadoVentas;
+        private ToolStrip toolStrip1;
+        private FontAwesome.Sharp.IconToolStripButton iconToolHistoricoVentas;
     }
 }

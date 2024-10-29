@@ -1,4 +1,5 @@
-﻿using KioscoInformaticoServices.Models;
+﻿using KioscoInformaticoServices.Enums;
+using KioscoInformaticoServices.Models;
 using KioscoInformaticoServices.Services;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -38,7 +39,7 @@ namespace KioscoInformaticoDesktop.ViewReports
         private void FacturaVentaViewReport_Load(object sender, EventArgs e)
         {
             reporte.LocalReport.ReportEmbeddedResource = "KioscoInformaticoDesktop.Reports.FacturaVentaReport.rdlc";
-            var ventas = new List<object> { new { Id = nuevaVenta.Id, Fecha = nuevaVenta.Fecha, ClienteNombre = nuevaVenta.Cliente.Nombre, Total = nuevaVenta.Total, Iva = nuevaVenta.Iva } };
+            var ventas = new List<object> { new { Id = nuevaVenta.Id, Fecha = nuevaVenta.Fecha, ClienteNombre = nuevaVenta.Cliente.Nombre, Total = nuevaVenta.Total, Iva = nuevaVenta.Iva, FormaDePago = nuevaVenta.FormaPago.ToString() } };
             var detalleVentas = nuevaVenta.DetallesVenta.Select(dv => new { ProductoNombre = dv.Producto.Nombre, PrecioUnitario = dv.PrecioUnitario, Cantidad = dv.Cantidad, SubTotal = dv.Subtotal }).ToList();
             reporte.LocalReport.DataSources.Add(new ReportDataSource("DSVentas", ventas));
             reporte.LocalReport.DataSources.Add(new ReportDataSource("DSDetallesVenta", detalleVentas));
