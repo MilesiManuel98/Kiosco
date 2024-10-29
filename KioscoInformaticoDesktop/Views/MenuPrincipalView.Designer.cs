@@ -78,7 +78,7 @@
             MenuItemVentas.IconSize = 28;
             MenuItemVentas.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemVentas.Name = "MenuItemVentas";
-            MenuItemVentas.Size = new Size(232, 34);
+            MenuItemVentas.Size = new Size(143, 34);
             MenuItemVentas.Text = "Ventas";
             MenuItemVentas.Click += MenuItemVentas_Click;
             // 
@@ -216,20 +216,22 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { iconToolHistoricoVentas });
             toolStrip1.Location = new Point(0, 58);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(914, 27);
+            toolStrip1.Size = new Size(914, 55);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
             // iconToolHistoricoVentas
             // 
             iconToolHistoricoVentas.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            iconToolHistoricoVentas.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconToolHistoricoVentas.IconChar = FontAwesome.Sharp.IconChar.Print;
             iconToolHistoricoVentas.IconColor = Color.Black;
             iconToolHistoricoVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconToolHistoricoVentas.ImageScaling = ToolStripItemImageScaling.None;
             iconToolHistoricoVentas.ImageTransparentColor = Color.Magenta;
             iconToolHistoricoVentas.Name = "iconToolHistoricoVentas";
-            iconToolHistoricoVentas.Size = new Size(29, 24);
+            iconToolHistoricoVentas.Size = new Size(52, 52);
             iconToolHistoricoVentas.Text = "Historico Ventas";
+            iconToolHistoricoVentas.TextImageRelation = TextImageRelation.ImageAboveText;
             iconToolHistoricoVentas.Click += iconToolHistoricoVentas_Click;
             // 
             // MenuPrincipalView

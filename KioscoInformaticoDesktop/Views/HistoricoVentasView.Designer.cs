@@ -31,8 +31,16 @@
             dataGridVentas = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
+            checkFiltrado = new CheckBox();
+            panelFiltrado = new Panel();
+            label3 = new Label();
+            dateTimeHasta = new DateTimePicker();
+            label2 = new Label();
+            dateTimeDesde = new DateTimePicker();
+            btnFiltar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).BeginInit();
             panel1.SuspendLayout();
+            panelFiltrado.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridVentas
@@ -40,12 +48,12 @@
             dataGridVentas.AllowUserToAddRows = false;
             dataGridVentas.AllowUserToDeleteRows = false;
             dataGridVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridVentas.Location = new Point(0, 178);
+            dataGridVentas.Location = new Point(0, 132);
             dataGridVentas.Name = "dataGridVentas";
             dataGridVentas.ReadOnly = true;
             dataGridVentas.RowHeadersWidth = 51;
-            dataGridVentas.SelectionMode = DataGridViewSelectionMode.FullColumnSelect;
-            dataGridVentas.Size = new Size(799, 188);
+            dataGridVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridVentas.Size = new Size(799, 234);
             dataGridVentas.TabIndex = 0;
             // 
             // panel1
@@ -69,19 +77,96 @@
             label1.TabIndex = 0;
             label1.Text = "Historico Ventas";
             // 
+            // checkFiltrado
+            // 
+            checkFiltrado.AutoSize = true;
+            checkFiltrado.Location = new Point(11, 84);
+            checkFiltrado.Name = "checkFiltrado";
+            checkFiltrado.Size = new Size(115, 24);
+            checkFiltrado.TabIndex = 3;
+            checkFiltrado.Text = "Activar Filtro";
+            checkFiltrado.UseVisualStyleBackColor = true;
+            checkFiltrado.CheckedChanged += checkFiltrado_CheckedChanged;
+            // 
+            // panelFiltrado
+            // 
+            panelFiltrado.BackColor = SystemColors.ButtonFace;
+            panelFiltrado.BorderStyle = BorderStyle.FixedSingle;
+            panelFiltrado.Controls.Add(btnFiltar);
+            panelFiltrado.Controls.Add(label3);
+            panelFiltrado.Controls.Add(dateTimeHasta);
+            panelFiltrado.Controls.Add(label2);
+            panelFiltrado.Controls.Add(dateTimeDesde);
+            panelFiltrado.Location = new Point(127, 76);
+            panelFiltrado.Name = "panelFiltrado";
+            panelFiltrado.Size = new Size(661, 38);
+            panelFiltrado.TabIndex = 9;
+            panelFiltrado.Visible = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(240, 8);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Hasta:";
+            // 
+            // dateTimeHasta
+            // 
+            dateTimeHasta.Enabled = false;
+            dateTimeHasta.Format = DateTimePickerFormat.Short;
+            dateTimeHasta.Location = new Point(296, 3);
+            dateTimeHasta.Name = "dateTimeHasta";
+            dateTimeHasta.Size = new Size(102, 27);
+            dateTimeHasta.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(33, 8);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Desde:";
+            // 
+            // dateTimeDesde
+            // 
+            dateTimeDesde.Enabled = false;
+            dateTimeDesde.Format = DateTimePickerFormat.Short;
+            dateTimeDesde.Location = new Point(89, 3);
+            dateTimeDesde.Name = "dateTimeDesde";
+            dateTimeDesde.Size = new Size(102, 27);
+            dateTimeDesde.TabIndex = 2;
+            // 
+            // btnFiltar
+            // 
+            btnFiltar.Location = new Point(491, 3);
+            btnFiltar.Name = "btnFiltar";
+            btnFiltar.Size = new Size(94, 29);
+            btnFiltar.TabIndex = 10;
+            btnFiltar.Text = "Filtrar";
+            btnFiltar.UseVisualStyleBackColor = true;
+            // 
             // HistoricoVentasView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panelFiltrado);
+            Controls.Add(checkFiltrado);
             Controls.Add(panel1);
             Controls.Add(dataGridVentas);
             Name = "HistoricoVentasView";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "HistorialVentasView";
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelFiltrado.ResumeLayout(false);
+            panelFiltrado.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -89,5 +174,12 @@
         private DataGridView dataGridVentas;
         private Panel panel1;
         private Label label1;
+        private CheckBox checkFiltrado;
+        private Panel panelFiltrado;
+        private Label label2;
+        private DateTimePicker dateTimeDesde;
+        private Label label3;
+        private DateTimePicker dateTimeHasta;
+        private Button btnFiltar;
     }
 }

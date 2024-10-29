@@ -16,6 +16,7 @@ namespace KioscoInformaticoDesktop.Views
     public partial class HistoricoVentasView : Form
     {
         GenericService<Venta> ventaService = new GenericService<Venta>();
+        List<Venta> ventas = new List<Venta>();
         public HistoricoVentasView()
         {
             InitializeComponent();
@@ -24,8 +25,37 @@ namespace KioscoInformaticoDesktop.Views
 
         private async void LoadData()
         {
-            dataGridVentas.DataSource = await ventaService.GetAllAsync();
-            dataGridVentas.OcultarColumnas(new string[] { "Id", "ClienteId", "Eliminado" });
+            ventas = await ventaService.GetAllAsync();
+            dataGridVentas.DataSource = ventas;
+            dataGridVentas.OcultarColumnas(new string[] { "Id", "ClienteId", "Eliminado","DetallesVenta" });
+            dataGridVentas.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridVentas.Columns["Total"].DefaultCellStyle.Format = "N2";
+            dataGridVentas.Columns["Iva"].DefaultCellStyle.Format = "N2";
+        }
+
+        private void checkFiltrado_CheckedChanged(object sender, EventArgs e)
+        {
+            panelFiltrado.Visible = checkFiltrado.Checked;
+            if (checkFiltrado.Checked)
+            {
+                dateTimeDesde.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                dateTimeHasta.Value = DateTime.Now;
+                LoadFilterData();
+            }
+            else
+            {
+                LoadData();
+            }
+        }
+
+        private void LoadFilterData()
+        {
+            
+            dataGridVentas.DataSource = ventas.Where(venta=>venta.Fecha>=dateTimeDesde.Value && venta.Fecha>= dateTimeHasta.Value).ToList();
+            dataGridVentas.OcultarColumnas(new string[] { "Id", "ClienteId", "Eliminado", "DetallesVenta" });
+            dataGridVentas.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridVentas.Columns["Total"].DefaultCellStyle.Format = "N2";
+            dataGridVentas.Columns["Iva"].DefaultCellStyle.Format = "N2";
         }
     }
 }
