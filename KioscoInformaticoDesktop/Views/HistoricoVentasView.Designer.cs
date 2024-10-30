@@ -33,11 +33,11 @@
             label1 = new Label();
             checkFiltrado = new CheckBox();
             panelFiltrado = new Panel();
+            btnFiltar = new Button();
             label3 = new Label();
-            dateTimeHasta = new DateTimePicker();
             label2 = new Label();
             dateTimeDesde = new DateTimePicker();
-            btnFiltar = new Button();
+            dateTimeHasta = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).BeginInit();
             panel1.SuspendLayout();
             panelFiltrado.SuspendLayout();
@@ -92,16 +92,26 @@
             // 
             panelFiltrado.BackColor = SystemColors.ButtonFace;
             panelFiltrado.BorderStyle = BorderStyle.FixedSingle;
+            panelFiltrado.Controls.Add(dateTimeHasta);
+            panelFiltrado.Controls.Add(dateTimeDesde);
             panelFiltrado.Controls.Add(btnFiltar);
             panelFiltrado.Controls.Add(label3);
-            panelFiltrado.Controls.Add(dateTimeHasta);
             panelFiltrado.Controls.Add(label2);
-            panelFiltrado.Controls.Add(dateTimeDesde);
             panelFiltrado.Location = new Point(127, 76);
             panelFiltrado.Name = "panelFiltrado";
             panelFiltrado.Size = new Size(661, 38);
             panelFiltrado.TabIndex = 9;
             panelFiltrado.Visible = false;
+            // 
+            // btnFiltar
+            // 
+            btnFiltar.Location = new Point(491, 3);
+            btnFiltar.Name = "btnFiltar";
+            btnFiltar.Size = new Size(94, 29);
+            btnFiltar.TabIndex = 10;
+            btnFiltar.Text = "Filtrar";
+            btnFiltar.UseVisualStyleBackColor = true;
+            btnFiltar.Click += btnFiltar_Click;
             // 
             // label3
             // 
@@ -111,15 +121,6 @@
             label3.Size = new Size(50, 20);
             label3.TabIndex = 5;
             label3.Text = "Hasta:";
-            // 
-            // dateTimeHasta
-            // 
-            dateTimeHasta.Enabled = false;
-            dateTimeHasta.Format = DateTimePickerFormat.Short;
-            dateTimeHasta.Location = new Point(296, 3);
-            dateTimeHasta.Name = "dateTimeHasta";
-            dateTimeHasta.Size = new Size(102, 27);
-            dateTimeHasta.TabIndex = 4;
             // 
             // label2
             // 
@@ -132,21 +133,19 @@
             // 
             // dateTimeDesde
             // 
-            dateTimeDesde.Enabled = false;
-            dateTimeDesde.Format = DateTimePickerFormat.Short;
-            dateTimeDesde.Location = new Point(89, 3);
+            dateTimeDesde.Location = new Point(93, 3);
             dateTimeDesde.Name = "dateTimeDesde";
-            dateTimeDesde.Size = new Size(102, 27);
-            dateTimeDesde.TabIndex = 2;
+            dateTimeDesde.Size = new Size(123, 27);
+            dateTimeDesde.TabIndex = 11;
+            dateTimeDesde.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
             // 
-            // btnFiltar
+            // dateTimeHasta
             // 
-            btnFiltar.Location = new Point(491, 3);
-            btnFiltar.Name = "btnFiltar";
-            btnFiltar.Size = new Size(94, 29);
-            btnFiltar.TabIndex = 10;
-            btnFiltar.Text = "Filtrar";
-            btnFiltar.UseVisualStyleBackColor = true;
+            dateTimeHasta.Location = new Point(296, 3);
+            dateTimeHasta.Name = "dateTimeHasta";
+            dateTimeHasta.Size = new Size(123, 27);
+            dateTimeHasta.TabIndex = 12;
+            dateTimeHasta.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
             // 
             // HistoricoVentasView
             // 
@@ -177,9 +176,9 @@
         private CheckBox checkFiltrado;
         private Panel panelFiltrado;
         private Label label2;
-        private DateTimePicker dateTimeDesde;
         private Label label3;
-        private DateTimePicker dateTimeHasta;
         private Button btnFiltar;
+        private DateTimePicker dateTimeDesde;
+        private DateTimePicker dateTimeHasta;
     }
 }

@@ -26,13 +26,16 @@ namespace KioscoInformaticoDesktop.Views
         private async void LoadData()
         {
             ventas = await ventaService.GetAllAsync();
+            DisplayDataGridFilter();
+        }
+        private void DisplayDataGrid()
+        {
             dataGridVentas.DataSource = ventas;
             dataGridVentas.OcultarColumnas(new string[] { "Id", "ClienteId", "Eliminado","DetallesVenta" });
             dataGridVentas.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridVentas.Columns["Total"].DefaultCellStyle.Format = "N2";
             dataGridVentas.Columns["Iva"].DefaultCellStyle.Format = "N2";
         }
-
         private void checkFiltrado_CheckedChanged(object sender, EventArgs e)
         {
             panelFiltrado.Visible = checkFiltrado.Checked;
@@ -40,22 +43,27 @@ namespace KioscoInformaticoDesktop.Views
             {
                 dateTimeDesde.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 dateTimeHasta.Value = DateTime.Now;
-                LoadFilterData();
+                DisplayDataGridFilter();
             }
             else
             {
-                LoadData();
+                DisplayDataGrid();
             }
         }
 
-        private void LoadFilterData()
+        private void DisplayDataGridFilter()
         {
             
-            dataGridVentas.DataSource = ventas.Where(venta=>venta.Fecha>=dateTimeDesde.Value && venta.Fecha>= dateTimeHasta.Value).ToList();
+            dataGridVentas.DataSource = ventas.Where(venta=>venta.Fecha>=dateTimeDesde.Value && venta.Fecha<= dateTimeHasta.Value).ToList();
             dataGridVentas.OcultarColumnas(new string[] { "Id", "ClienteId", "Eliminado", "DetallesVenta" });
             dataGridVentas.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridVentas.Columns["Total"].DefaultCellStyle.Format = "N2";
             dataGridVentas.Columns["Iva"].DefaultCellStyle.Format = "N2";
+        }
+
+        private void btnFiltar_Click(object sender, EventArgs e)
+        {
+            DisplayDataGridFilter();
         }
     }
 }

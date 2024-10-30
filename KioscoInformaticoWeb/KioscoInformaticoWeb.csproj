@@ -8,12 +8,10 @@
 
   <ItemGroup>
     <None Remove="Components\Commons\HeaderPage.razor.css" />
-    <None Remove="Pages\Counter.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Components\Commons\HeaderPage.razor.css" />
-    <Content Include="Pages\Counter.razor.css" />
   </ItemGroup>
 
   <ItemGroup>

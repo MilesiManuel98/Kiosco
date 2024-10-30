@@ -1,0 +1,66 @@
+﻿<h3>Login</h3>
+
+@if (!isAuthenticated)
+{
+    <div class="card text-center">
+        <div class="card-header">
+            Iniciar sesión
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Bienvenido a Kiosco Informatico</h3>
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <label class="form-label me-2">Email</label>
+                        <InputText class="form-control w-50" @bind-Value="email" placeholder="Email" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <label class="form-label me-2">Password</label>
+                        <InputText class="form-control w-50" @bind-Value="password" placeholder="Password" type="password" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button class="btn btn-primary" @onclick="Loguear">Acceder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+            Desarrollo para Base de datos I - 2do año Tecnicatura Superior en Desarrollo de Software
+        </div>
+    </div>
+}
+else
+{
+    <div class="card text-center">
+        <div class="card-header">
+            Cerrar sesión
+        </div>
+        <div class="card-body">
+            <p class="card-header">Cerrar acceso administrativo de AppVotos</p>
+
+            <button class="btn btn-primary" @onclick="Desloguear">Cerrar sesión</button>
+        </div>
+        <div class="card-footer text-body-secondary">
+            Desarrollo para Club de Emprendedores de San Justo
+        </div>
+    </div>
+}
+
+@code {
+    private bool isAuthenticated = false;
+    private string email = string.Empty;
+    private string password = string.Empty;
+
+    private Task Desloguear(MouseEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+    private Task Loguear(MouseEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+}
