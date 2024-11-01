@@ -1,4 +1,6 @@
-﻿<h3>Login</h3>
+﻿@page "/login"
+@inject NavigationManager NavigationManager
+@inject FirebaseAuthService AuthService
 
 @if (!isAuthenticated)
 {
@@ -40,7 +42,7 @@ else
             Cerrar sesión
         </div>
         <div class="card-body">
-            <p class="card-header">Cerrar acceso administrativo de AppVotos</p>
+            <p class="card-header">Cerrar acceso </p>
 
             <button class="btn btn-primary" @onclick="Desloguear">Cerrar sesión</button>
         </div>
@@ -55,12 +57,27 @@ else
     private string email = string.Empty;
     private string password = string.Empty;
 
-    private Task Desloguear(MouseEventArgs e)
+    private async Task Loguear()
     {
-        throw new NotImplementedException();
+        var userId = await AuthService.SignInWithEmailPassword(email, password);
+        isAuthenticated = await AuthService.IsUserAuthenticated();
+        StateHasChanged();
+        //NavigationManager.NavigateTo($"/");
     }
-    private Task Loguear(MouseEventArgs e)
+
+    protected override async Task OnInitializedAsync()
     {
-        throw new NotImplementedException();
+        isAuthenticated = await AuthService.IsUserAuthenticated();
+
+
     }
+
+    private async Task Desloguear()
+    {
+        AuthService.SignOut();
+        StateHasChanged();
+        isAuthenticated = false;
+        //NavigationManager.NavigateTo($"/");
+    }
+
 }
