@@ -18,7 +18,7 @@ namespace KioscoInformaticoDesktop.Views
 {
     public partial class ComprasView : Form
     {
-        ClienteService clienteService = new ClienteService();
+        ProveedorService proveedorService = new ProveedorService();
         ProductoService productoService = new ProductoService();
         GenericService<Compra> compraService = new GenericService<Compra>();
         Compra compra = new Compra();
@@ -31,14 +31,14 @@ namespace KioscoInformaticoDesktop.Views
         private async void AjustePantalla()
         {
             await Task.WhenAll(
-                Task.Run(async () => comboBoxProveedores.DataSource = await clienteService.GetAllAsync()),
+                Task.Run(async () => comboBoxProveedores.DataSource = await proveedorService.GetAllAsync()),
                 Task.Run(async () => comboBoxProductos.DataSource = await productoService.GetAllAsync())
             );
 
             comboBoxProveedores.DisplayMember = "Nombre";
             comboBoxProveedores.ValueMember = "Id"; 
             comboBoxProveedores.SelectedIndex = -1;
-            comboBoxProveedores.Text = "Seleccione un cliente";
+            comboBoxProveedores.Text = "Seleccione un proveedor";
 
             comboBoxProductos.DisplayMember = "Nombre";
             comboBoxProductos.ValueMember = "Id";

@@ -27,7 +27,17 @@ namespace KioscoInformaticoDesktop.Views
         {
             ventas = await ventaService.GetAllAsync();
             DisplayDataGridFilter();
+            CalculeTotal();
         }
+
+        private void CalculeTotal()
+        {
+            if (checkFiltrado.Checked)
+                numericTotalFacturado.Value = ventas.Where(venta => venta.Fecha >= dateTimeDesde.Value && venta.Fecha <= dateTimeHasta.Value).Sum(venta => venta.Total);
+            else
+                numericTotalFacturado.Value = ventas.Sum(venta => venta.Total);
+        }
+
         private void DisplayDataGrid()
         {
             dataGridVentas.DataSource = ventas;
@@ -44,10 +54,12 @@ namespace KioscoInformaticoDesktop.Views
                 dateTimeDesde.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 dateTimeHasta.Value = DateTime.Now;
                 DisplayDataGridFilter();
+                CalculeTotal();
             }
             else
             {
                 DisplayDataGrid();
+                CalculeTotal();
             }
         }
 
@@ -64,6 +76,7 @@ namespace KioscoInformaticoDesktop.Views
         private void btnFiltar_Click(object sender, EventArgs e)
         {
             DisplayDataGridFilter();
+            CalculeTotal();
         }
     }
 }

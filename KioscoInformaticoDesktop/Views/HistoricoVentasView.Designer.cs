@@ -39,11 +39,11 @@
             label3 = new Label();
             label2 = new Label();
             label8 = new Label();
-            numericTotal = new NumericUpDown();
+            numericTotalFacturado = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).BeginInit();
             panel1.SuspendLayout();
             panelFiltrado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericTotalFacturado).BeginInit();
             SuspendLayout();
             // 
             // dataGridVentas
@@ -159,16 +159,16 @@
             label8.TabIndex = 17;
             label8.Text = "Total Facturado:";
             // 
-            // numericTotal
+            // numericTotalFacturado
             // 
-            numericTotal.DecimalPlaces = 2;
-            numericTotal.Enabled = false;
-            numericTotal.Location = new Point(655, 405);
-            numericTotal.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
-            numericTotal.Name = "numericTotal";
-            numericTotal.Size = new Size(121, 27);
-            numericTotal.TabIndex = 16;
-            numericTotal.TextAlign = HorizontalAlignment.Center;
+            numericTotalFacturado.DecimalPlaces = 2;
+            numericTotalFacturado.Enabled = false;
+            numericTotalFacturado.Location = new Point(655, 405);
+            numericTotalFacturado.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            numericTotalFacturado.Name = "numericTotalFacturado";
+            numericTotalFacturado.Size = new Size(121, 27);
+            numericTotalFacturado.TabIndex = 16;
+            numericTotalFacturado.TextAlign = HorizontalAlignment.Center;
             // 
             // HistoricoVentasView
             // 
@@ -176,7 +176,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label8);
-            Controls.Add(numericTotal);
+            Controls.Add(numericTotalFacturado);
             Controls.Add(panelFiltrado);
             Controls.Add(checkFiltrado);
             Controls.Add(panel1);
@@ -189,7 +189,7 @@
             panel1.PerformLayout();
             panelFiltrado.ResumeLayout(false);
             panelFiltrado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericTotal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericTotalFacturado).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,6 +207,6 @@
         private DateTimePicker dateTimeDesde;
         private DateTimePicker dateTimeHasta;
         private Label label8;
-        private NumericUpDown numericTotal;
+        private NumericUpDown numericTotalFacturado;
     }
 }
