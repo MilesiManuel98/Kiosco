@@ -50,7 +50,7 @@
             btnQuitar = new FontAwesome.Sharp.IconButton();
             label8 = new Label();
             numericTotal = new NumericUpDown();
-            btnFinalizarVenta = new FontAwesome.Sharp.IconButton();
+            btnFinalizarCompra = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             label9 = new Label();
             panel1.SuspendLayout();
@@ -295,23 +295,23 @@
             numericTotal.TabIndex = 14;
             numericTotal.TextAlign = HorizontalAlignment.Center;
             // 
-            // btnFinalizarVenta
+            // btnFinalizarCompra
             // 
-            btnFinalizarVenta.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnFinalizarVenta.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            btnFinalizarVenta.IconColor = Color.Black;
-            btnFinalizarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnFinalizarVenta.IconSize = 50;
-            btnFinalizarVenta.ImageAlign = ContentAlignment.TopCenter;
-            btnFinalizarVenta.Location = new Point(515, 498);
-            btnFinalizarVenta.Margin = new Padding(3, 4, 3, 4);
-            btnFinalizarVenta.Name = "btnFinalizarVenta";
-            btnFinalizarVenta.Size = new Size(158, 75);
-            btnFinalizarVenta.TabIndex = 16;
-            btnFinalizarVenta.Text = "Finalizar Venta";
-            btnFinalizarVenta.TextAlign = ContentAlignment.BottomCenter;
-            btnFinalizarVenta.UseVisualStyleBackColor = true;
-            btnFinalizarVenta.Click += btnFinalizarCompra_Click;
+            btnFinalizarCompra.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFinalizarCompra.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
+            btnFinalizarCompra.IconColor = Color.Black;
+            btnFinalizarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFinalizarCompra.IconSize = 50;
+            btnFinalizarCompra.ImageAlign = ContentAlignment.TopCenter;
+            btnFinalizarCompra.Location = new Point(515, 498);
+            btnFinalizarCompra.Margin = new Padding(3, 4, 3, 4);
+            btnFinalizarCompra.Name = "btnFinalizarCompra";
+            btnFinalizarCompra.Size = new Size(158, 75);
+            btnFinalizarCompra.TabIndex = 16;
+            btnFinalizarCompra.Text = "Finalizar Compra";
+            btnFinalizarCompra.TextAlign = ContentAlignment.BottomCenter;
+            btnFinalizarCompra.UseVisualStyleBackColor = true;
+            btnFinalizarCompra.Click += btnFinalizarCompra_Click;
             // 
             // panel2
             // 
@@ -340,7 +340,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(685, 584);
             Controls.Add(panel2);
-            Controls.Add(btnFinalizarVenta);
+            Controls.Add(btnFinalizarCompra);
             Controls.Add(label8);
             Controls.Add(btnAgregar);
             Controls.Add(numericTotal);
@@ -391,7 +391,7 @@
         private FontAwesome.Sharp.IconButton btnQuitar;
         private Label label8;
         private NumericUpDown numericTotal;
-        private FontAwesome.Sharp.IconButton btnFinalizarVenta;
+        private FontAwesome.Sharp.IconButton btnFinalizarCompra;
         private Panel panel2;
         private Label label9;
     }
