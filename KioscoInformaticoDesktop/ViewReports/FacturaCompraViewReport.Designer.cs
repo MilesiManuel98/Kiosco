@@ -30,13 +30,14 @@
         {
             SuspendLayout();
             // 
-            // FacturaVentaViewReport
+            // FacturaCompraViewReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "FacturaVentaViewReport";
-            Text = "FacturaVentaViewReport";
+            Name = "FacturaCompraViewReport";
+            Text = "FacturaCompraViewReport";
+            UseWaitCursor = true;
             Load += FacturaCompraViewReport_Load;
             ResumeLayout(false);
         }

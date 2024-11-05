@@ -20,7 +20,7 @@ public partial class Compra
 
     public virtual Proveedor? Proveedor { get; set; }
 
-    public virtual ICollection<DetalleCompra> DetallesCompra { get; set; } = new HashSet<DetalleCompra>();
+    public virtual ICollection<DetalleCompra?> DetallesCompra { get; set; } = new HashSet<DetalleCompra>();
 
     public bool Eliminado { get; set; } = false;
 }

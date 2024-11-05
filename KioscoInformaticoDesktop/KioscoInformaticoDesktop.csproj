@@ -17,8 +17,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Reports\ClientesReport.rdlc" />
-    <EmbeddedResource Include="Reports\FacturaCompraReport.rdlc" />
     <EmbeddedResource Include="Reports\FacturaVentaReport.rdlc" />
+    <EmbeddedResource Include="Reports\FacturaCompraReport.rdlc" />
     <EmbeddedResource Include="Reports\LocalidadesReport.rdlc" />
   </ItemGroup>
 

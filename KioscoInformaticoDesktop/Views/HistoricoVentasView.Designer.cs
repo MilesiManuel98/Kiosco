@@ -108,6 +108,7 @@
             // 
             // dateTimeHasta
             // 
+            dateTimeHasta.Format = DateTimePickerFormat.Short;
             dateTimeHasta.Location = new Point(296, 3);
             dateTimeHasta.Name = "dateTimeHasta";
             dateTimeHasta.Size = new Size(123, 27);
@@ -116,6 +117,7 @@
             // 
             // dateTimeDesde
             // 
+            dateTimeDesde.Format = DateTimePickerFormat.Short;
             dateTimeDesde.Location = new Point(93, 3);
             dateTimeDesde.Name = "dateTimeDesde";
             dateTimeDesde.Size = new Size(123, 27);
