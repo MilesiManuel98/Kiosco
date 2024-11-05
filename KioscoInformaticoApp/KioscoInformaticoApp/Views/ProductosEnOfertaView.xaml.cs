@@ -1,8 +1,9 @@
+
 namespace KioscoInformaticoApp.Views;
 
-public partial class ProductosEnOferta : ContentPage
+public partial class ProductosEnOfertaView : ContentPage
 {
-	public ProductosEnOferta()
+	public ProductosEnOfertaView()
 	{
         InitializeComponent();
 	}

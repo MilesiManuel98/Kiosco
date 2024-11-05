@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             MenuItemPrincipal = new FontAwesome.Sharp.IconMenuItem();
+            MenuItemCompras = new FontAwesome.Sharp.IconMenuItem();
             MenuItemVentas = new FontAwesome.Sharp.IconMenuItem();
             MenuItemBases = new FontAwesome.Sharp.IconMenuItem();
             MenuItemLocalidades = new FontAwesome.Sharp.IconMenuItem();
@@ -61,7 +62,7 @@
             // 
             // MenuItemPrincipal
             // 
-            MenuItemPrincipal.DropDownItems.AddRange(new ToolStripItem[] { MenuItemVentas });
+            MenuItemPrincipal.DropDownItems.AddRange(new ToolStripItem[] { MenuItemCompras, MenuItemVentas });
             MenuItemPrincipal.IconChar = FontAwesome.Sharp.IconChar.House;
             MenuItemPrincipal.IconColor = Color.Black;
             MenuItemPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -69,6 +70,18 @@
             MenuItemPrincipal.Name = "MenuItemPrincipal";
             MenuItemPrincipal.Size = new Size(128, 52);
             MenuItemPrincipal.Text = "Principal";
+            // 
+            // MenuItemCompras
+            // 
+            MenuItemCompras.IconChar = FontAwesome.Sharp.IconChar.MoneyBill1;
+            MenuItemCompras.IconColor = Color.Black;
+            MenuItemCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MenuItemCompras.IconSize = 28;
+            MenuItemCompras.ImageScaling = ToolStripItemImageScaling.None;
+            MenuItemCompras.Name = "MenuItemCompras";
+            MenuItemCompras.Size = new Size(232, 34);
+            MenuItemCompras.Text = "Compras";
+            MenuItemCompras.Click += MenuItemCompras_Click;
             // 
             // MenuItemVentas
             // 
@@ -78,7 +91,7 @@
             MenuItemVentas.IconSize = 28;
             MenuItemVentas.ImageScaling = ToolStripItemImageScaling.None;
             MenuItemVentas.Name = "MenuItemVentas";
-            MenuItemVentas.Size = new Size(143, 34);
+            MenuItemVentas.Size = new Size(232, 34);
             MenuItemVentas.Text = "Ventas";
             MenuItemVentas.Click += MenuItemVentas_Click;
             // 
@@ -274,5 +287,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemListadoVentas;
         private ToolStrip toolStrip1;
         private FontAwesome.Sharp.IconToolStripButton iconToolHistoricoVentas;
+        private FontAwesome.Sharp.IconMenuItem MenuItemCompras;
     }
 }

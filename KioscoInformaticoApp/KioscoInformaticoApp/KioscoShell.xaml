@@ -4,12 +4,48 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:KioscoInformaticoApp"
-    Shell.FlyoutBehavior="Disabled"
-    Title="KioscoInformaticoApp">
+    xmlns:views="clr-namespace:KioscoInformaticoApp.Views"
+    xmlns:contentviews="clr-namespace:KioscoInformaticoApp.ContentViews"
+    Shell.FlyoutBehavior="Flyout"
+    Title="KioscoInformaticoApp"
+    FlyoutBackgroundImage="photo.jpg"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <contentviews:FlyoutHeader />
+    </Shell.FlyoutHeader>
 
+    <Shell.FlyoutFooter>
+        <contentviews:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Route="nuestra_app"
+                FlyoutDisplayOptions="AsMultipleItems">
+        
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="Ofertas"
+            ContentTemplate="{DataTemplate views:ProductosEnOfertaView}"
+            Route="ProductosEnOferta"/>
+        <Tab Title="Domestic"
+             Route="domestic"
+             Icon="paw.png">
+            <ShellContent
+                Title="Productos"
+                Icon="monkey.png"
+                ContentTemplate="{DataTemplate views:ProductosView}"
+                Route="Productos" />
+            <ShellContent
+                Title="Agregar Producto"
+                Icon="paw.png"
+                ContentTemplate="{DataTemplate views:AddEditProductoView}"
+                Route="AgregarProducto" />
+        </Tab>
+    </FlyoutItem>
+    <MenuFlyoutItem Text="Cerrar Sesion" 
+                    IconImageSource="random.png"/>
 </Shell>

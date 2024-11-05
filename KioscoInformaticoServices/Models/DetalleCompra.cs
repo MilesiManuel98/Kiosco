@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KioscoInformaticoServices.Models;
 
@@ -12,6 +13,9 @@ public partial class DetalleCompra
     public decimal PrecioUnitario { get; set; }
 
     public int Cantidad { get; set; }
+
+    [NotMapped]
+    public decimal Subtotal => Cantidad * PrecioUnitario;
 
     public int CompraId { get; set; }
 

@@ -33,14 +33,17 @@
             label1 = new Label();
             checkFiltrado = new CheckBox();
             panelFiltrado = new Panel();
+            dateTimeHasta = new DateTimePicker();
+            dateTimeDesde = new DateTimePicker();
             btnFiltar = new Button();
             label3 = new Label();
             label2 = new Label();
-            dateTimeDesde = new DateTimePicker();
-            dateTimeHasta = new DateTimePicker();
+            label8 = new Label();
+            numericTotal = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).BeginInit();
             panel1.SuspendLayout();
             panelFiltrado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericTotal).BeginInit();
             SuspendLayout();
             // 
             // dataGridVentas
@@ -103,6 +106,22 @@
             panelFiltrado.TabIndex = 9;
             panelFiltrado.Visible = false;
             // 
+            // dateTimeHasta
+            // 
+            dateTimeHasta.Location = new Point(296, 3);
+            dateTimeHasta.Name = "dateTimeHasta";
+            dateTimeHasta.Size = new Size(123, 27);
+            dateTimeHasta.TabIndex = 12;
+            dateTimeHasta.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
+            // 
+            // dateTimeDesde
+            // 
+            dateTimeDesde.Location = new Point(93, 3);
+            dateTimeDesde.Name = "dateTimeDesde";
+            dateTimeDesde.Size = new Size(123, 27);
+            dateTimeDesde.TabIndex = 11;
+            dateTimeDesde.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
+            // 
             // btnFiltar
             // 
             btnFiltar.Location = new Point(491, 3);
@@ -131,27 +150,33 @@
             label2.TabIndex = 3;
             label2.Text = "Desde:";
             // 
-            // dateTimeDesde
+            // label8
             // 
-            dateTimeDesde.Location = new Point(93, 3);
-            dateTimeDesde.Name = "dateTimeDesde";
-            dateTimeDesde.Size = new Size(123, 27);
-            dateTimeDesde.TabIndex = 11;
-            dateTimeDesde.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
+            label8.AutoSize = true;
+            label8.Location = new Point(535, 407);
+            label8.Name = "label8";
+            label8.Size = new Size(114, 20);
+            label8.TabIndex = 17;
+            label8.Text = "Total Facturado:";
             // 
-            // dateTimeHasta
+            // numericTotal
             // 
-            dateTimeHasta.Location = new Point(296, 3);
-            dateTimeHasta.Name = "dateTimeHasta";
-            dateTimeHasta.Size = new Size(123, 27);
-            dateTimeHasta.TabIndex = 12;
-            dateTimeHasta.Value = new DateTime(2024, 10, 29, 17, 12, 38, 0);
+            numericTotal.DecimalPlaces = 2;
+            numericTotal.Enabled = false;
+            numericTotal.Location = new Point(655, 405);
+            numericTotal.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            numericTotal.Name = "numericTotal";
+            numericTotal.Size = new Size(121, 27);
+            numericTotal.TabIndex = 16;
+            numericTotal.TextAlign = HorizontalAlignment.Center;
             // 
             // HistoricoVentasView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label8);
+            Controls.Add(numericTotal);
             Controls.Add(panelFiltrado);
             Controls.Add(checkFiltrado);
             Controls.Add(panel1);
@@ -164,6 +189,7 @@
             panel1.PerformLayout();
             panelFiltrado.ResumeLayout(false);
             panelFiltrado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericTotal).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,5 +206,7 @@
         private Button btnFiltar;
         private DateTimePicker dateTimeDesde;
         private DateTimePicker dateTimeHasta;
+        private Label label8;
+        private NumericUpDown numericTotal;
     }
 }

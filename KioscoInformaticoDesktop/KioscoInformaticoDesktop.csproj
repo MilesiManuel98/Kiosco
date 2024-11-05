@@ -10,12 +10,14 @@
 
   <ItemGroup>
     <None Remove="Reports\ClientesReport.rdlc" />
+    <None Remove="Reports\FacturaCompraReport.rdlc" />
     <None Remove="Reports\FacturaVentaReport.rdlc" />
     <None Remove="Reports\LocalidadesReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Reports\ClientesReport.rdlc" />
+    <EmbeddedResource Include="Reports\FacturaCompraReport.rdlc" />
     <EmbeddedResource Include="Reports\FacturaVentaReport.rdlc" />
     <EmbeddedResource Include="Reports\LocalidadesReport.rdlc" />
   </ItemGroup>
@@ -65,10 +67,16 @@
     <Compile Update="ViewReports\ClientesViewReport.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ViewReports\FacturaCompraViewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\ProveedoresView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\ClientesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ComprasView.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

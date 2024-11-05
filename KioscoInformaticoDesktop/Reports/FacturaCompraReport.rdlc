@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>16.29714cm</Width>
+              <Width>15.61123cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.05128cm</Height>
+              <Height>0.96162cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -34,7 +34,7 @@
                           <rd:DefaultName>ProductoNombre</rd:DefaultName>
                           <Top>0.17639cm</Top>
                           <Height>0.6cm</Height>
-                          <Width>3.75709cm</Width>
+                          <Width>3.97814cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -121,9 +121,9 @@
                           </Paragraphs>
                           <rd:DefaultName>SubTotal</rd:DefaultName>
                           <Top>0.17639cm</Top>
-                          <Left>12.15873cm</Left>
+                          <Left>12.32806cm</Left>
                           <Height>0.6cm</Height>
-                          <Width>2.5cm</Width>
+                          <Width>2.33067cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
@@ -161,10 +161,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSDetallesCompra</DataSetName>
+        <DataSetName>DSDetallesVenta</DataSetName>
         <Left>0.48189cm</Left>
-        <Height>1.05128cm</Height>
-        <Width>16.29714cm</Width>
+        <Height>0.96162cm</Height>
+        <Width>15.61123cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -175,7 +175,7 @@
     <Height>0.44526in</Height>
     <Style />
   </Body>
-  <Width>6.60592in</Width>
+  <Width>6.53092in</Width>
   <Page>
     <PageHeader>
       <Height>3.62542cm</Height>
@@ -243,7 +243,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Proveedor</Value>
+                  <Value>Cliente</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -325,6 +325,127 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Id1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!Id.Value, "DSVentas")</Value>
+                  <Style>
+                    <Format>0000000#</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Id1</rd:DefaultName>
+          <Top>0.67564cm</Top>
+          <Left>4.63642cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.87326cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="ClienteNombre">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ClienteNombre.Value, "DSVentas")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ClienteNombre</rd:DefaultName>
+          <Top>1.73425cm</Top>
+          <Left>4.41537cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.5795cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Fecha">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Fecha.Value, "DSVentas")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Fecha</rd:DefaultName>
+          <Left>14.08853cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="FormaDePago">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!FormaDePago.Value, "DSVentas")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>FormaDePago</rd:DefaultName>
+          <Top>0.67564cm</Top>
+          <Left>10.27262cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
         <Textbox Name="Textbox9">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -344,7 +465,7 @@
           <Left>7.4269cm</Left>
           <Height>0.6cm</Height>
           <Width>2.66933cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -360,7 +481,7 @@
           <Left>0.48189cm</Left>
           <Height>0cm</Height>
           <Width>15.67625cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -386,7 +507,7 @@
           <Left>0.48189cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -416,7 +537,7 @@
           <Left>6.06284cm</Left>
           <Height>0.6cm</Height>
           <Width>1.18767cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -446,7 +567,7 @@
           <Left>9.18259cm</Left>
           <Height>0.6cm</Height>
           <Width>1.52633cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>14</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -476,126 +597,6 @@
           <Left>13.59312cm</Left>
           <Height>0.6cm</Height>
           <Width>1.5475cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Fecha">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Fecha.Value, "DSCompras")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Fecha</rd:DefaultName>
-          <Top>0cm</Top>
-          <Left>14.27903cm</Left>
-          <Height>0.6cm</Height>
-          <Width>1.87911cm</Width>
-          <ZIndex>12</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Id">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Id.Value, "DSCompras")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Id</rd:DefaultName>
-          <Top>0.67564cm</Top>
-          <Left>4.63642cm</Left>
-          <Height>0.6cm</Height>
-          <Width>1.23cm</Width>
-          <ZIndex>13</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="FormaDePago">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!FormaDePago.Value, "DSCompras")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>FormaDePago</rd:DefaultName>
-          <Top>0.67564cm</Top>
-          <Left>10.27262cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
-          <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="ProveedorNombre">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!ProveedorNombre.Value, "DSCompras")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ProveedorNombre</rd:DefaultName>
-          <Top>1.73425cm</Top>
-          <Left>4.41537cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.83514cm</Width>
           <ZIndex>15</ZIndex>
           <Style>
             <Border>
@@ -630,6 +631,36 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Iva">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!Iva.Value, "DSVentas")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Iva</rd:DefaultName>
+          <Top>0.69118cm</Top>
+          <Left>4.75051cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.20883cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
         <Textbox Name="Textbox7">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -649,7 +680,7 @@
           <Left>3.61103cm</Left>
           <Height>0.6cm</Height>
           <Width>0.849cm</Width>
-          <ZIndex>1</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -679,36 +710,6 @@
           <Left>9.18259cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Iva">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!Iva.Value, "DSCompras")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Iva</rd:DefaultName>
-          <Top>0.69118cm</Top>
-          <Left>4.75051cm</Left>
-          <Height>0.6cm</Height>
-          <Width>1.75917cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -727,7 +728,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Total.Value, "DSCompras")</Value>
+                  <Value>=Sum(Fields!Total.Value, "DSVentas")</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -736,9 +737,9 @@
           </Paragraphs>
           <rd:DefaultName>Total</rd:DefaultName>
           <Top>0.69118cm</Top>
-          <Left>12.03537cm</Left>
+          <Left>11.85898cm</Left>
           <Height>0.6cm</Height>
-          <Width>1.87677cm</Width>
+          <Width>2.05316cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -777,47 +778,47 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSCompras">
+    <DataSet Name="DSVentas">
       <Query>
         <DataSourceName>KioscoInformaticoDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fecha">
-          <DataField>Fecha</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Iva">
-          <DataField>Iva</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="FormaDePago">
           <DataField>FormaDePago</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.DateTimeOffset</rd:TypeName>
+        </Field>
+        <Field Name="ClienteNombre">
+          <DataField>ClienteNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ProveedorNombre">
-          <DataField>ProveedorNombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Iva">
+          <DataField>Iva</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>KioscoInformaticoDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\manue\source\repos\Kiosco\KioscoInformaticoDesktop\DataSet\KioscoInformaticoDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>DSCompras</rd:TableName>
+        <rd:TableName>DSVentas</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DSDetallesCompra">
+    <DataSet Name="DSDetallesVenta">
       <Query>
         <DataSourceName>KioscoInformaticoDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -843,7 +844,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>KioscoInformaticoDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\manue\source\repos\Kiosco\KioscoInformaticoDesktop\DataSet\KioscoInformaticoDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>DSDetallesCompra</rd:TableName>
+        <rd:TableName>DSDetallesVenta</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
