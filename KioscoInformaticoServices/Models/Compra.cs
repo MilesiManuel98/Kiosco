@@ -10,9 +10,19 @@ public partial class Compra
 
     public FormaDePagoEnum FormaDePago { get; set; }
 
-    public decimal Iva { get; set; }
+    private decimal iva;
+    public decimal Iva
+    {
+        get => Math.Round(iva, 2);
+        set => iva = Math.Round(value, 2);
+    }
 
-    public decimal Total { get; set; }
+    private decimal total;
+    public decimal Total
+    {
+        get => Math.Round(total, 2);
+        set => total = Math.Round(value, 2);
+    }
 
     public DateTime Fecha { get; set; }
 

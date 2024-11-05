@@ -21,7 +21,6 @@ namespace KioscoInformaticoDesktop.ViewReports
         {
             InitializeComponent();
             reporte.Dock = DockStyle.Fill;
-
             Controls.Add(reporte);
         }
 

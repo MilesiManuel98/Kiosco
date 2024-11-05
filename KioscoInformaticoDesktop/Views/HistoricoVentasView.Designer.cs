@@ -40,6 +40,7 @@
             label2 = new Label();
             label8 = new Label();
             numericTotalFacturado = new NumericUpDown();
+            btnImprimir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridVentas).BeginInit();
             panel1.SuspendLayout();
             panelFiltrado.SuspendLayout();
@@ -155,7 +156,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(535, 407);
+            label8.Location = new Point(304, 401);
             label8.Name = "label8";
             label8.Size = new Size(114, 20);
             label8.TabIndex = 17;
@@ -165,18 +166,29 @@
             // 
             numericTotalFacturado.DecimalPlaces = 2;
             numericTotalFacturado.Enabled = false;
-            numericTotalFacturado.Location = new Point(655, 405);
+            numericTotalFacturado.Location = new Point(424, 399);
             numericTotalFacturado.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             numericTotalFacturado.Name = "numericTotalFacturado";
             numericTotalFacturado.Size = new Size(121, 27);
             numericTotalFacturado.TabIndex = 16;
             numericTotalFacturado.TextAlign = HorizontalAlignment.Center;
             // 
+            // btnImprimir
+            // 
+            btnImprimir.Location = new Point(650, 401);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(94, 29);
+            btnImprimir.TabIndex = 18;
+            btnImprimir.Text = "Imprimir";
+            btnImprimir.UseVisualStyleBackColor = true;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
             // HistoricoVentasView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnImprimir);
             Controls.Add(label8);
             Controls.Add(numericTotalFacturado);
             Controls.Add(panelFiltrado);
@@ -210,5 +222,6 @@
         private DateTimePicker dateTimeHasta;
         private Label label8;
         private NumericUpDown numericTotalFacturado;
+        private Button btnImprimir;
     }
 }

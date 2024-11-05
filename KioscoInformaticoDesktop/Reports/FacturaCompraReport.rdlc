@@ -172,13 +172,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.44526in</Height>
+    <Height>0.93693in</Height>
     <Style />
   </Body>
   <Width>6.60592in</Width>
   <Page>
     <PageHeader>
-      <Height>3.62542cm</Height>
+      <Height>4.81075cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -502,7 +502,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Fecha</rd:DefaultName>
-          <Top>0cm</Top>
           <Left>14.27903cm</Left>
           <Height>0.6cm</Height>
           <Width>1.87911cm</Width>
@@ -593,9 +592,9 @@
           </Paragraphs>
           <rd:DefaultName>ProveedorNombre</rd:DefaultName>
           <Top>1.73425cm</Top>
-          <Left>4.41537cm</Left>
+          <Left>4.75051cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.83514cm</Width>
+          <Width>4.38383cm</Width>
           <ZIndex>15</ZIndex>
           <Style>
             <Border>

@@ -121,7 +121,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Telefonos</rd:DefaultName>
-                          <Top>0cm</Top>
                           <Left>10.49891cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
@@ -174,13 +173,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.63889in</Height>
+    <Height>1.10556in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>3.09625cm</Height>
+      <Height>4.21808cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
