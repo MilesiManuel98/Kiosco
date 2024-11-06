@@ -37,7 +37,7 @@
         }
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="login">
-                <span class="bi bi-login" aria-hidden="true"></span> Login
+                <span class="bi bi-login" aria-hidden="true"></span> @textoLogin
             </NavLink>
         </div>
     </nav>
@@ -58,11 +58,11 @@
     protected override async Task OnInitializedAsync()
     {
         isAuthenticated = await AuthService.IsUserAuthenticated();
-        //AuthService.OnChangeLogin += ChequeoEstadoLogin;
+        AuthService.OnChangeLogin += ChequeoEstadoLogin;
     }
 
-    private void ChequeoEstadoLogin(object sender, EventArgs e)
-    {
+    private void ChequeoEstadoLogin()
+    { 
         isAuthenticated = AuthService.IsUserAuthenticated().Result;
         StateHasChanged();
     }
