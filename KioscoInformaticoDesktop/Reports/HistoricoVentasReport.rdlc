@@ -570,7 +570,7 @@
                 </Border>
               </Style>
             </Line>
-            <Textbox Name="Textbox1">
+            <Textbox Name="TituloReporte">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -587,11 +587,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.09934cm</Top>
+              <rd:DefaultName>TituloReporte</rd:DefaultName>
+              <Top>0.42221cm</Top>
               <Left>5.18291cm</Left>
-              <Height>1.27564cm</Height>
-              <Width>6.31705cm</Width>
+              <Height>1.27733cm</Height>
+              <Width>5.14441cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
