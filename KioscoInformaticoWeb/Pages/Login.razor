@@ -9,7 +9,7 @@
             Iniciar sesión
         </div>
         <div class="card-body">
-            <h3 class="card-title">Bienvenido a Kiosco Informatico</h3>
+            <h3 class="card-title">Bienvenido a KioscoInformatico</h3>
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
@@ -75,8 +75,8 @@ else
     private async Task Desloguear()
     {
         AuthService.SignOut();
-        StateHasChanged();
         isAuthenticated = false;
+        StateHasChanged();
         //NavigationManager.NavigateTo($"/");
     }
 
