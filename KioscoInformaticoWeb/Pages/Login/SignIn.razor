@@ -9,27 +9,26 @@
             Registro
         </div>
         <div class="card-body">
-            <EditForm OnValidSubmit="Register">
-                
+            <form>
                 <div class="form-group mb-2">
-                    <label for="name">Nombre:</label>
+                    <label class="form-control" for="name">Nombre:</label>
                     <InputText id="Nombre" class="form-control" @bind-Value="name" />
                 </div>
                 <div class="form-group mb-2">
-                    <label for="email">Email:</label>
+                    <label class="form-control" for="email">Email:</label>
                     <InputText id="email" class="form-control" @bind-Value="email" />
                 </div>
                 <div class="form-group mb-2">
-                    <label for="password">Password:</label>
-                    <InputText id="password" class="form-control" @bind-Value="password" />
+                    <label class="form-control" for="password">Password:</label>
+                    <InputText id="password" class="form-control" @bind-Value="password" type="password" />
                 </div>
                 <div class="form-group mb-2">
-                    <label for="passwordVerify">Password Verify:</label>
-                    <InputText id="passwordVerify" class="form-control" @bind-Value="passwordVerify" />
+                    <label class="form-control" for="passwordVerify">Password Verify:</label>
+                    <InputText id="passwordVerify" class="form-control" @bind-Value="passwordVerify" type="password" />
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-            </EditForm>
+                <button type="button" class="btn btn-primary mb-2" @onclick="Register" >Enviar</button>
+            </form>
         </div>
         <div class="card-footer text-body-secondary">
             KioscoInformatico
