@@ -93,7 +93,7 @@ namespace KioscoInformaticoApp.ViewModels
                 };
                 await productoService.AddAsync(producto);
             }
-            WeakReferenceMessenger.Default.Send(new Message("CerrarVentana"));
+            await Shell.Current.GoToAsync("//ListaProductos");
         }
     }
 }

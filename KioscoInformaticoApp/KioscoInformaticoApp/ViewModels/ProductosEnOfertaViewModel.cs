@@ -83,7 +83,7 @@ namespace KioscoInformaticoApp.ViewModels
             }
         }
 
-        private async Task ObtenerProductos()
+        public async Task ObtenerProductos()
         {
             FilterProducts = string.Empty;
             ActivityStart = true;

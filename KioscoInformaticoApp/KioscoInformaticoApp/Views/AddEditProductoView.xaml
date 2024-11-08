@@ -16,7 +16,7 @@
                Text="{Binding Nombre}"
                HorizontalOptions="Center"
                VerticalOptions="Center"/>
-        <Entry Placeholder="Precio del producto"
+        <Entry Placeholder="Precio del producto: $ "
                Text="{Binding Precio}"
                HorizontalOptions="Center"
                VerticalOptions="Center"/>

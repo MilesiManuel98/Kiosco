@@ -36,19 +36,19 @@
             Title="Ofertas"
             ContentTemplate="{DataTemplate views:ProductosEnOfertaView}"
             Route="ProductosEnOferta"/>
-        <Tab Title="Domestic"
-             Route="domestic"
+        <Tab Title="Productos"
+             Route="Productos"
              Icon="paw.png">
             <ShellContent
                 Title="Productos"
                 Icon="monkey.png"
                 ContentTemplate="{DataTemplate views:ProductosView}"
-                Route="Productos" />
+                Route="ListaProductos" />
             <ShellContent
                 Title="Agregar Producto"
                 Icon="paw.png"
                 ContentTemplate="{DataTemplate views:AddEditProductoView}"
-                Route="AgregarProducto" />
+                Route="AgregarEditarProducto" />
         </Tab>
     </FlyoutItem>
     <MenuFlyoutItem Text="Cerrar Sesion"
