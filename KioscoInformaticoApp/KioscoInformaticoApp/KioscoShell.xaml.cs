@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using KioscoInformaticoApp.Class;
 using KioscoInformaticoApp.ViewModels;
+using KioscoInformaticoApp.Views;
 
 namespace KioscoInformaticoApp
 {
@@ -10,6 +11,12 @@ namespace KioscoInformaticoApp
         {
             InitializeComponent();
             FlyoutItemsPrincipal.IsVisible = false;
+            RegisterRouter();
+        }
+
+        private void RegisterRouter()
+        {
+            Routing.RegisterRoute("Registrarse", typeof(RegistrarseView));
         }
 
         public void EnableAppAfterLogin()
